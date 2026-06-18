@@ -3,273 +3,342 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adriatica Homes - Apartamenty nad Morzem Adriatyckim</title>
+    <title>Adriatica Homes - Ekskluzywne Nieruchomości Nad Adriatykiem</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-        body { font-family: 'Roboto', sans-serif; }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FAFCFF; }
         
         .hero-bg {
-            background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), 
-                              url('https://picsum.photos/id/1016/1920/700');
+            background-image: linear-gradient(rgba(15, 32, 67, 0.6), rgba(15, 32, 67, 0.4)), 
+                              url('https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
         }
         .property-card {
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .property-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            transform: translateY(-6px);
+            box-shadow: 0 22px 40px -10px rgba(14, 116, 144, 0.12);
         }
         .sticky-form {
             position: sticky;
-            top: 20px;
+            top: 110px;
+        }
+        /* Simulated Custom Map Elements */
+        .map-canvas {
+            background-image: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="text-slate-800">
 
     <!-- HEADER -->
-    <header class="bg-white shadow-sm border-b sticky top-0 z-50">
+    <header class="bg-white/95 backdrop-blur-md shadow-sm border-b border-sky-100/60 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-[#FA4A4E] rounded-xl flex items-center justify-center text-white font-bold text-2xl">AH</div>
+            <div class="flex items-center gap-3 cursor-pointer" onclick="showPage('home')">
+                <div class="w-10 h-10 bg-sky-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-md shadow-sky-200">A</div>
                 <div>
-                    <span class="text-2xl font-bold tracking-tight">Adriatica</span>
-                    <span class="text-[#FA4A4E] font-bold">Homes</span>
+                    <span class="text-2xl font-extrabold text-slate-900 tracking-tight">Adriatica</span>
+                    <span class="text-sky-600 font-bold">Homes</span>
                 </div>
             </div>
 
-            <nav class="flex items-center gap-8 text-lg">
-                <a href="#" onclick="showPage('home')" class="font-medium hover:text-[#FA4A4E] transition-colors">Strona główna</a>
-                <a href="#" onclick="showPage('properties')" class="font-medium hover:text-[#FA4A4E] transition-colors">Oferty</a>
-                <a href="#" class="font-medium hover:text-[#FA4A4E] transition-colors">O nas</a>
-                <a href="#" class="font-medium hover:text-[#FA4A4E] transition-colors">Kontakt</a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide uppercase text-slate-600">
+                <a href="#" onclick="showPage('home')" class="hover:text-sky-600 transition-colors">Strona główna</a>
+                <a href="#" onclick="showPage('properties')" class="hover:text-sky-600 transition-colors">Eksploruj Oferty</a>
+                <a href="#" onclick="showPage('about')" class="hover:text-sky-600 transition-colors">O nas</a>
             </nav>
 
             <a href="#" onclick="showPage('properties')" 
-               class="bg-[#FA4A4E] hover:bg-[#e63e42] text-white px-8 py-3 rounded-xl font-semibold text-lg flex items-center gap-2">
-                <i class="fas fa-home"></i> Na sprzedaż
+               class="bg-slate-900 hover:bg-sky-700 text-white px-6 py-3 rounded-xl font-bold text-sm tracking-wider uppercase transition-all shadow-lg shadow-slate-900/10 flex items-center gap-2">
+                <i class="fas fa-search-location"></i> Zobacz Mapę
             </a>
         </div>
     </header>
 
     <!-- HOMEPAGE -->
     <div id="home-page">
-        <!-- Hero -->
-        <section class="hero-bg text-white py-24">
+        <!-- Hero Section -->
+        <section class="hero-bg text-white py-36 rounded-b-[40px] shadow-lg">
             <div class="max-w-4xl mx-auto text-center px-6">
-                <h1 class="text-5xl font-bold mb-6">Apartamenty i domy nad Morzem Adriatyckim</h1>
-                <p class="text-2xl mb-10">Twoja wymarzona nieruchomość we Włoszech z obsługą „klucz w rękę”</p>
+                <span class="bg-sky-500/30 backdrop-blur-md text-sky-300 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full border border-sky-400/30">Premium Real Estate Portfolio</span>
+                <h1 class="text-5xl md:text-6xl font-black tracking-tight mt-6 mb-6 leading-tight">Ekskluzywne apartamenty <br>i wille nad Adriatykiem</h1>
+                <p class="text-xl md:text-2xl text-sky-100 font-light max-w-2xl mx-auto mb-10">Inwestuj w bezpieczną przyszłość i luksus. Kompleksowa obsługa zakupowa rynku premium z polskim wsparciem.</p>
                 <button onclick="showPage('properties')" 
-                        class="bg-white text-[#FA4A4E] hover:bg-gray-100 px-10 py-4 rounded-2xl text-xl font-semibold">
-                    Przeglądaj oferty
+                        class="bg-white text-slate-950 hover:bg-sky-50 shadow-xl px-10 py-4 rounded-2xl text-md font-bold tracking-wide uppercase transition-all transform active:scale-95">
+                    Przeglądaj wille premium
                 </button>
             </div>
         </section>
 
-        <!-- Frasi -->
-        <section class="py-16 bg-white">
-            <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 text-center">
-                <div>
-                    <div class="text-[#FA4A4E] text-4xl mb-4">🔑</div>
-                    <h3 class="font-semibold text-xl mb-2">Usługa „klucz w rękę”</h3>
-                    <p class="text-gray-600">Zajmujemy się wszystkim od A do Z</p>
+        <!-- Quick Categories Selection Filters -->
+        <section class="max-w-6xl mx-auto -mt-12 px-6 relative z-10">
+            <div class="bg-white p-4 rounded-3xl shadow-xl border border-sky-100 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div onclick="showPage('properties')" class="p-4 rounded-2xl bg-sky-50/60 hover:bg-sky-50 border border-sky-100/50 text-center cursor-pointer transition-colors group">
+                    <i class="fas fa-umbrella-beach text-sky-600 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+                    <p class="text-xs font-bold text-slate-800 tracking-wide uppercase">Beachfront</p>
                 </div>
-                <div>
-                    <div class="text-[#FA4A4E] text-4xl mb-4">✅</div>
-                    <h3 class="font-semibold text-xl mb-2">Certyfikowani partnerzy</h3>
-                    <p class="text-gray-600">Tylko sprawdzone agencje we Włoszech</p>
+                <div onclick="showPage('properties')" class="p-4 rounded-2xl bg-sky-50/60 hover:bg-sky-50 border border-sky-100/50 text-center cursor-pointer transition-colors group">
+                    <i class="fas fa-gem text-sky-600 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+                    <p class="text-xs font-bold text-slate-800 tracking-wide uppercase">Luxury Villas</p>
                 </div>
-                <div>
-                    <div class="text-[#FA4A4E] text-4xl mb-4">🇵🇱</div>
-                    <h3 class="font-semibold text-xl mb-2">Wsparcie po polsku</h3>
-                    <p class="text-gray-600">Polski zespół na każdym etapie</p>
+                <div onclick="showPage('properties')" class="p-4 rounded-2xl bg-sky-50/60 hover:bg-sky-50 border border-sky-100/50 text-center cursor-pointer transition-colors group">
+                    <i class="fas fa-building text-sky-600 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+                    <p class="text-xs font-bold text-slate-800 tracking-wide uppercase">New Developments</p>
+                </div>
+                <div onclick="showPage('properties')" class="p-4 rounded-2xl bg-sky-50/60 hover:bg-sky-50 border border-sky-100/50 text-center cursor-pointer transition-colors group">
+                    <i class="fas fa-chart-line text-sky-600 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+                    <p class="text-xs font-bold text-slate-800 tracking-wide uppercase">Investment</p>
                 </div>
             </div>
         </section>
 
-        <!-- Featured Properties -->
-        <section class="py-16 bg-gray-100">
+        <!-- Trust Features -->
+        <section class="py-20">
+            <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-center">
+                <div class="p-4">
+                    <div class="w-16 h-16 bg-sky-50 rounded-2xl flex items-center justify-center text-sky-600 text-2xl mx-auto mb-5 border border-sky-100"><i class="fas fa-key"></i></div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-900">Standard „Klucz w rękę”</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Nadzorujemy pełen proces prawny, notarialny oraz architektoniczny bez angażowania Twojego czasu.</p>
+                </div>
+                <div class="p-4">
+                    <div class="w-16 h-16 bg-sky-50 rounded-2xl flex items-center justify-center text-sky-600 text-2xl mx-auto mb-5 border border-sky-100"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-900">Zweryfikowane Aktywa</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Wszystkie grunty i wille przechodzą rygorystyczny audyt deweloperski przed wpisaniem do oferty.</p>
+                </div>
+                <div class="p-4">
+                    <div class="w-16 h-16 bg-sky-50 rounded-2xl flex items-center justify-center text-sky-600 text-2xl mx-auto mb-5 border border-sky-100"><i class="fas fa-globe-europe"></i></div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-900">Polskojęzyczni Doradcy</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Nasz dedykowany lokalny zespół we Włoszech i Chorwacji przeprowadzi Cię przez procedury w ojczystym języku.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Section -->
+        <section class="py-16 bg-slate-50 border-t border-b border-sky-100/40">
             <div class="max-w-7xl mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center mb-12">Polecane oferty nad morzem</h2>
+                <div class="flex justify-between items-end mb-10">
+                    <div>
+                        <span class="text-xs font-bold text-sky-600 tracking-wider uppercase">Selekcja Ekspertów</span>
+                        <h2 class="text-3xl font-bold tracking-tight text-slate-900 mt-1">Polecane Inwestycje Nadmorskie</h2>
+                    </div>
+                    <button onclick="showPage('properties')" class="text-sm font-bold text-sky-600 hover:text-sky-700 flex items-center gap-1">Zobacz wszystko <i class="fas fa-arrow-right text-xs"></i></button>
+                </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8" id="featured-properties"></div>
             </div>
         </section>
     </div>
 
-    <!-- PAGE LISTA OFERT -->
+    <!-- MAIN EXPLORE PAGE WITH INTEGRATED LIVE INTERACTIVE MAP -->
     <div id="properties-page" class="hidden max-w-7xl mx-auto px-6 py-12">
-        <h1 class="text-4xl font-bold mb-10">Wszystkie oferty</h1>
-        <div class="grid md:grid-cols-3 gap-8" id="all-properties"></div>
-    </div>
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-10">
+            <div>
+                <h1 class="text-4xl font-black text-slate-900 tracking-tight">Eksploruj Wybrzeże</h1>
+                <p class="text-slate-500 text-sm mt-1">Filtruj zweryfikowane domy i przeglądaj lokalizacje na żywo na interaktywnej mapie.</p>
+            </div>
+            
+            <!-- Quick Filter Controls Form Bar -->
+            <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-600">
+                <select class="bg-white border border-slate-200 p-3 rounded-xl outline-none focus:border-sky-500"><option>Lokalizacja: Wszystkie</option><option>Chorwacja</option><option>Włochy</option></select>
+                <select class="bg-white border border-slate-200 p-3 rounded-xl outline-none focus:border-sky-500"><option>Odległość od morza: < 50m</option><option>< 200m</option></select>
+                <select class="bg-white border border-slate-200 p-3 rounded-xl outline-none focus:border-sky-500"><option>Pokoje: Dowolna</option><option>3+ Pokoje</option></select>
+            </div>
+        </div>
 
-    <!-- DETAIL PAGE -->
-    <div id="detail-page" class="hidden">
-        <div class="max-w-7xl mx-auto px-6 py-8">
-            <button onclick="backToHome()" class="flex items-center gap-2 text-[#FA4A4E] mb-6 hover:underline">
-                ← Powrót do ofert
-            </button>
-
-            <div class="grid lg:grid-cols-12 gap-10">
-                <!-- Immagini + Descrizione -->
-                <div class="lg:col-span-8">
-                    <div class="relative mb-8 rounded-3xl overflow-hidden shadow-2xl">
-                        <img id="main-image" class="w-full h-[520px] object-cover" alt="">
-                        <div class="absolute bottom-6 left-6 flex gap-3">
-                            <button onclick="prevSlide()" class="w-12 h-12 bg-white/80 hover:bg-white rounded-2xl flex items-center justify-center text-3xl">‹</button>
-                            <button onclick="nextSlide()" class="w-12 h-12 bg-white/80 hover:bg-white rounded-2xl flex items-center justify-center text-3xl">›</button>
-                        </div>
+        <div class="grid lg:grid-cols-12 gap-8">
+            <!-- Listings Cards Matrix List (Left Side) -->
+            <div class="lg:col-span-7 grid md:grid-cols-2 gap-6" id="all-properties"></div>
+            
+            <!-- Interactive Map Wrapper Box Component (Right Side) -->
+            <div class="lg:col-span-5 h-[620px] rounded-3xl overflow-hidden shadow-md border border-sky-100 relative sticky top-28">
+                <div class="map-canvas w-full h-full relative">
+                    <!-- Interactive Active Pins synced to data logic array metrics -->
+                    <div onclick="triggerDetailsById(1)" class="absolute top-1/4 left-1/3 bg-sky-600 text-white font-bold text-xs px-3 py-1.5 rounded-full shadow-lg border-2 border-white cursor-pointer transform hover:scale-110 hover:bg-slate-900 transition-all">
+                        320 000 PLN
                     </div>
-
-                    <div class="grid grid-cols-4 gap-4 mb-10" id="thumbnails"></div>
-
-                    <div id="property-title" class="text-4xl font-bold mb-2"></div>
-                    <div class="flex items-center gap-6 text-2xl mb-8">
-                        <div id="property-price" class="font-bold text-[#FA4A4E]"></div>
-                        <div id="property-location" class="text-gray-600"></div>
+                    <div onclick="triggerDetailsById(2)" class="absolute top-1/2 left-2/3 bg-sky-600 text-white font-bold text-xs px-3 py-1.5 rounded-full shadow-lg border-2 border-white cursor-pointer transform hover:scale-110 hover:bg-slate-900 transition-all">
+                        480 000 PLN
                     </div>
-
-                    <div id="property-description" class="prose text-lg leading-relaxed text-gray-700"></div>
+                    <div onclick="triggerDetailsById(3)" class="absolute top-2/3 left-1/2 bg-sky-600 text-white font-bold text-xs px-3 py-1.5 rounded-full shadow-lg border-2 border-white cursor-pointer transform hover:scale-110 hover:bg-slate-900 transition-all">
+                        395 000 PLN
+                    </div>
                 </div>
-
-                <!-- Form Contatti -->
-                <div class="lg:col-span-4">
-                    <div class="sticky-form bg-white rounded-3xl shadow-xl p-8 border border-gray-100">
-                        <h3 class="text-2xl font-semibold mb-6 text-center">Zainteresowany?</h3>
-                        <p class="text-center text-gray-600 mb-8">Skontaktuj się z nami</p>
-                        
-                        <form id="contact-form" onsubmit="submitForm(event)" class="space-y-6">
-                            <div>
-                                <label class="block text-sm font-medium mb-2">Imię *</label>
-                                <input type="text" required class="w-full px-5 py-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#FA4A4E]">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium mb-2">Nazwisko *</label>
-                                <input type="text" required class="w-full px-5 py-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#FA4A4E]">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium mb-2">E-mail *</label>
-                                <input type="email" required class="w-full px-5 py-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#FA4A4E]">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium mb-2">Telefon</label>
-                                <input type="tel" class="w-full px-5 py-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#FA4A4E]">
-                            </div>
-                            <button type="submit" 
-                                    class="w-full bg-[#FA4A4E] hover:bg-[#e63e42] text-white py-5 rounded-2xl font-semibold text-lg transition-all">
-                                Wyślij wiadomość
-                            </button>
-                        </form>
-                    </div>
+                <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md px-4 py-3 rounded-2xl text-xs font-semibold text-slate-700 flex items-center gap-2 border border-sky-100 shadow">
+                    <i class="fas fa-info-circle text-sky-600 text-base"></i> Wybierz przypinkę na mapie, by natychmiast otworzyć specyfikację techniczną.
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- DETAIL SCREEN PAGE -->
+    <div id="detail-page" class="hidden max-w-7xl mx-auto px-6 py-12">
+        <button onclick="backToExplore()" class="inline-flex items-center gap-2 text-sm font-bold text-sky-600 mb-8 hover:text-sky-700 transition-colors bg-sky-50 px-4 py-2 rounded-xl border border-sky-100">
+            <i class="fas fa-chevron-left text-xs"></i> Wróć do filtrowania ofert
+        </button>
+
+        <div class="grid lg:grid-cols-12 gap-10">
+            <!-- Left Panel Frame Content Element Showcase -->
+            <div class="lg:col-span-8">
+                <div class="relative mb-6 rounded-3xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100">
+                    <img id="main-image" class="w-full h-[520px] object-cover" alt="Main View Screen Preview">
+                    <div class="absolute bottom-6 left-6 flex gap-3">
+                        <button onclick="prevSlide()" class="w-12 h-12 bg-white/90 hover:bg-white text-slate-900 rounded-2xl flex items-center justify-center font-bold text-xl shadow-md transition-transform active:scale-90">‹</button>
+                        <button onclick="nextSlide()" class="w-12 h-12 bg-white/90 hover:bg-white text-slate-900 rounded-2xl flex items-center justify-center font-bold text-xl shadow-md transition-transform active:scale-90">›</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-4 gap-4 mb-10" id="thumbnails"></div>
+
+                <div class="bg-white p-8 rounded-3xl border border-sky-100/50 shadow-sm space-y-6">
+                    <div>
+                        <span id="property-location-tag" class="text-xs font-bold uppercase tracking-widest text-sky-600 bg-sky-50 px-3 py-1 rounded-full border border-sky-100"></span>
+                        <h2 id="property-title" class="text-3xl font-black text-slate-900 tracking-tight mt-3 mb-2"></h2>
+                        <div class="text-3xl font-black text-sky-600" id="property-price"></div>
+                    </div>
+
+                    <!-- Technical Core Specs Indicators -->
+                    <div class="grid grid-cols-4 gap-4 py-4 border-t border-b border-slate-100 text-center">
+                        <div class="p-2 bg-slate-50 rounded-xl"><i class="fas fa-bed text-sky-600 mb-1"></i><p class="text-xs font-bold text-slate-700">3 Pokoje</p></div>
+                        <div class="p-2 bg-slate-50 rounded-xl"><i class="fas fa-shower text-sky-600 mb-1"></i><p class="text-xs font-bold text-slate-700">2 Łazienki</p></div>
+                        <div class="p-2 bg-slate-50 rounded-xl"><i class="fas fa-swimming-pool text-sky-600 mb-1"></i><p class="text-xs font-bold text-slate-700">Inifinity Pool</p></div>
+                        <div class="p-2 bg-slate-50 rounded-xl"><i class="fas fa-water text-sky-600 mb-1"></i><p class="text-xs font-bold text-slate-700">< 100m Sea</p></div>
+                    </div>
+
+                    <div id="property-description" class="prose text-slate-600 leading-relaxed text-sm"></div>
+                </div>
+            </div>
+
+            <!-- Side Right Widget Sidebar Form Node Component -->
+            <div class="lg:col-span-4">
+                <div class="sticky-form bg-slate-900 rounded-3xl shadow-xl p-8 text-white border border-slate-800">
+                    <h3 class="text-xl font-bold tracking-tight text-center mb-1">Zabezpiecz Portfel Inwestycyjny</h3>
+                    <p class="text-center text-xs text-sky-300 font-medium mb-8">Zarezerwuj termin poufnej konsultacji</p>
+                    
+                    <form id="contact-form" onsubmit="submitForm(event)" class="space-y-4 text-xs font-semibold text-slate-300">
+                        <div>
+                            <label class="block mb-2 text-slate-400">Imię i Nazwisko *</label>
+                            <input type="text" required class="w-full px-4 py-3.5 bg-slate-800 border border-slate-700 rounded-xl focus:outline-none focus:border-sky-500 text-white">
+                        </div>
+                        <div>
+                            <label class="block mb-2 text-slate-400">Adres E-mail *</label>
+                            <input type="email" required class="w-full px-4 py-3.5 bg-slate-800 border border-slate-700 rounded-xl focus:outline-none focus:border-sky-500 text-white">
+                        </div>
+                        <div>
+                            <label class="block mb-2 text-slate-400">Numer Telefonu *</label>
+                            <input type="tel" required class="w-full px-4 py-3.5 bg-slate-800 border border-slate-700 rounded-xl focus:outline-none focus:border-sky-500 text-white" placeholder="+48 ...">
+                        </div>
+                        <div class="pt-4">
+                            <button type="submit" class="w-full bg-sky-600 hover:bg-sky-500 text-white py-4 rounded-xl font-bold text-sm tracking-wider uppercase transition-all shadow-md">
+                                Wyślij zapytanie ofertowe
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MISSION ABOUT INFO VIEW PAGE -->
+    <div id="about-page" class="hidden max-w-4xl mx-auto px-6 py-20">
+        <h2 class="text-4xl font-black text-slate-900 tracking-tight mb-6">Dlaczego inwestycje nad Adriatykiem posiadają stałą wartość?</h2>
+        <div class="space-y-6 text-slate-600 leading-relaxed text-md">
+            <p>Region basenu Morza Adriatyckiego reprezentuje stabilność kapitałową charakteryzującą się organicznym, stabilnym wzrostem na przestrzeni dekad. Restrykcyjne plany zagospodarowania przestrzennego uniemożliwiają masową zabudowę, co gwarantuje długofalowy deficyt luksusowych nieruchomości.</p>
+            <p><strong>Adriatica Homes</strong> nie jest kolejnym portalem transakcji najmu krótkoterminowego. Naszym nadrzędnym celem pozostaje selekcja i ochrona majątku kapitałowego inwestorów poprzez dostarczanie aktywów o wysokim standardzie budowlanym oraz nieskazitelnym statusie prawnym.</p>
+        </div>
+    </div>
+
+    <!-- FOOTER SYSTEM SECTION -->
+    <footer class="bg-slate-950 text-slate-400 text-xs py-12 border-t border-slate-900 mt-24">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p>&copy; 2026 Adriatica Homes Real Estate. Wszystkie prawa zastrzeżone.</p>
+            <div class="flex gap-6 font-semibold">
+                <a href="#" onclick="showPage('about')" class="hover:text-white">Polityka prywatności</a>
+                <a href="#" class="hover:text-white">Regulamin serwisu</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CORE SCRIPT IMPLEMENTATION ARCHITECTURE -->
     <script>
         const properties = [
             {
                 id: 1,
                 title: "Dwupokojowy apartament z widokiem na morze",
-                location: "Tortoreto Lido",
+                location: "Tortoreto Lido, Włochy",
                 price: "320 000 PLN",
                 images: [
-                    "https://picsum.photos/id/1016/1200/700",
-                    "https://picsum.photos/id/133/1200/700",
-                    "https://picsum.photos/id/201/1200/700",
-                    "https://picsum.photos/id/251/1200/700"
+                    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+                    "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80",
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80"
                 ],
-                description: `
-                    <p>Piękny apartament z dużym balkonem i panoramicznym widokiem na Morze Adriatyckie.</p>
-                    <ul class="list-disc pl-6 mt-6 space-y-2">
-                        <li>Powierzchnia: 58 m²</li>
-                        <li>2 pokoje + aneks kuchenny</li>
-                        <li>Balkon z widokiem na morze</li>
-                        <li>400 m od plaży</li>
-                        <li>Klimatyzacja</li>
-                    </ul>
-                `
+                description: "<p>Piękny, jasny apartament z dużym tarasem i bezpośrednim widokiem na linię brzegową. Idealnie zoptymalizowana przestrzeń mieszkalna z wykończeniem z marmuru premium oraz zaawansowanym systemem klimatyzacji kanałowej.</p>"
             },
             {
                 id: 2,
                 title: "Trzypokojowe mieszkanie z tarasem przy plaży",
-                location: "Alba Adriatica",
+                location: "Alba Adriatica, Włochy",
                 price: "480 000 PLN",
                 images: [
-                    "https://picsum.photos/id/180/1200/700",
-                    "https://picsum.photos/id/1016/1200/700",
-                    "https://picsum.photos/id/133/1200/700"
+                    "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80",
+                    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80"
                 ],
-                description: `<p>Przestronne mieszkanie zaledwie kilka kroków od plaży. Idealne na wynajem turystyczny.</p>`
+                description: "<p>Luksusowa posiadłość zaledwie 30 metrów od prywatnego zejścia na plażę. Trzy oddzielne pokoje wypoczynkowe, panoramiczna kuchnia oraz strefa SPA na tarasie dachowym.</p>"
             },
             {
                 id: 3,
                 title: "Apartament premium z widokiem panoramicznym",
-                location: "Tortoreto Lido",
+                location: "Hvar, Chorwacja",
                 price: "395 000 PLN",
                 images: [
-                    "https://picsum.photos/id/201/1200/700",
-                    "https://picsum.photos/id/251/1200/700",
-                    "https://picsum.photos/id/1016/1200/700"
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
+                    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80"
                 ],
-                description: `<p>Luksusowy apartament na ostatnim piętrze z niesamowitym widokiem na morze.</p>`
-            },
-            {
-                id: 4,
-                title: "Kawalerka bezpośrednio przy promenadzie",
-                location: "Pineto",
-                price: "195 000 PLN",
-                images: [
-                    "https://picsum.photos/id/133/1200/700",
-                    "https://picsum.photos/id/180/1200/700",
-                    "https://picsum.photos/id/1016/1200/700"
-                ],
-                description: `<p>Przytulna kawalerka w doskonałej lokalizacji turystycznej.</p>`
+                description: "<p>Kameralna, prestiżowa lokalizacja rezydencyjna na wyspie Hvar. Panoramiczne przeszklenia dają nieograniczony wizualny wgląd w archipelag wysp.</p>"
             }
         ];
 
         let currentProperty = null;
         let currentSlide = 0;
 
-        function populateFeatured() {
-            const container = document.getElementById('featured-properties');
-            container.innerHTML = '';
+        function populateCards() {
+            const featuredContainer = document.getElementById('featured-properties');
+            const allContainer = document.getElementById('all-properties');
+            
+            featuredContainer.innerHTML = '';
+            allContainer.innerHTML = '';
+
             properties.forEach(prop => {
-                const card = document.createElement('div');
-                card.className = 'property-card bg-white rounded-3xl overflow-hidden cursor-pointer shadow';
-                card.innerHTML = `
-                    <img src="${prop.images[0]}" class="w-full h-56 object-cover">
-                    <div class="p-6">
-                        <div class="font-semibold text-lg mb-1">${prop.title}</div>
-                        <div class="text-gray-500 mb-3">${prop.location}</div>
-                        <div class="text-2xl font-bold text-[#FA4A4E]">${prop.price}</div>
+                const cardHTML = `
+                    <div class="property-card bg-white rounded-3xl overflow-hidden cursor-pointer shadow-sm border border-sky-100/40">
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="${prop.images[0]}" class="w-full h-full object-cover">
+                            <div class="absolute top-4 left-4 bg-slate-950/70 backdrop-blur-md text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-lg border border-white/10">Nowość</div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-[11px] text-sky-600 font-extrabold uppercase tracking-wider">${prop.location}</span>
+                            <div class="font-bold text-lg text-slate-900 mt-1 mb-2 line-clamp-1">${prop.title}</div>
+                            <div class="text-xl font-black text-slate-900">${prop.price}</div>
+                        </div>
                     </div>
                 `;
-                card.onclick = () => showDetail(prop);
-                container.appendChild(card);
+
+                // Render into standard elements
+                const fCard = document.createElement('div'); fCard.innerHTML = cardHTML; fCard.onclick = () => showDetail(prop);
+                const aCard = document.createElement('div'); aCard.innerHTML = cardHTML; aCard.onclick = () => showDetail(prop);
+                
+                featuredContainer.appendChild(fCard);
+                allContainer.appendChild(aCard);
             });
         }
 
-        function populateAllProperties() {
-            const container = document.getElementById('all-properties');
-            container.innerHTML = '';
-            properties.forEach(prop => {
-                const card = document.createElement('div');
-                card.className = 'property-card bg-white rounded-3xl overflow-hidden cursor-pointer shadow';
-                card.innerHTML = `
-                    <img src="${prop.images[0]}" class="w-full h-56 object-cover">
-                    <div class="p-6">
-                        <div class="font-semibold text-lg mb-1">${prop.title}</div>
-                        <div class="text-gray-500 mb-3">${prop.location}</div>
-                        <div class="text-2xl font-bold text-[#FA4A4E]">${prop.price}</div>
-                    </div>
-                `;
-                card.onclick = () => showDetail(prop);
-                container.appendChild(card);
-            });
+        function triggerDetailsById(id) {
+            const found = properties.find(p => p.id === id);
+            if(found) showDetail(found);
         }
 
         function showDetail(prop) {
@@ -278,14 +347,16 @@
 
             document.getElementById('home-page').classList.add('hidden');
             document.getElementById('properties-page').classList.add('hidden');
+            document.getElementById('about-page').classList.add('hidden');
             document.getElementById('detail-page').classList.remove('hidden');
 
             document.getElementById('property-title').textContent = prop.title;
             document.getElementById('property-price').textContent = prop.price;
-            document.getElementById('property-location').textContent = prop.location;
+            document.getElementById('property-location-tag').textContent = prop.location;
             document.getElementById('property-description').innerHTML = prop.description;
 
             updateCarousel();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function updateCarousel() {
@@ -297,7 +368,7 @@
             currentProperty.images.forEach((img, i) => {
                 const thumb = document.createElement('img');
                 thumb.src = img;
-                thumb.className = `h-24 object-cover rounded-2xl cursor-pointer border-2 transition-all ${i === currentSlide ? 'border-[#FA4A4E] scale-105' : 'border-transparent'}`;
+                thumb.className = `h-20 w-full object-cover rounded-xl cursor-pointer border-2 transition-all ${i === currentSlide ? 'border-sky-600 bg-sky-50' : 'border-transparent opacity-60'}`;
                 thumb.onclick = () => { currentSlide = i; updateCarousel(); };
                 thumbsContainer.appendChild(thumb);
             });
@@ -321,26 +392,23 @@
             document.getElementById('home-page').classList.add('hidden');
             document.getElementById('properties-page').classList.add('hidden');
             document.getElementById('detail-page').classList.add('hidden');
+            document.getElementById('about-page').classList.add('hidden');
             
             if (page === 'home') document.getElementById('home-page').classList.remove('hidden');
             if (page === 'properties') document.getElementById('properties-page').classList.remove('hidden');
+            if (page === 'about') document.getElementById('about-page').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function backToHome() {
-            showPage('home');
-        }
+        function backToExplore() { showPage('properties'); }
 
         function submitForm(e) {
             e.preventDefault();
-            alert("✅ Wiadomość wysłana pomyślnie! Skontaktujemy się z Tobą wkrótce.");
+            alert("✅ Zapytanie przesłane pomyślnie. Przydzielony doradca skontaktuje się telefonicznie w ciągu najbliższych 2 godzin.");
             e.target.reset();
         }
 
-        // Inizializzazione
-        window.onload = () => {
-            populateFeatured();
-            populateAllProperties();
-        };
+        window.onload = () => { populateCards(); };
     </script>
 </body>
 </html>

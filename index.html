@@ -27,17 +27,10 @@
             position: sticky;
             top: 110px;
         }
-        /* Simulated Custom Map Elements */
-        .map-canvas {
-            background-image: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-        }
     </style>
 </head>
 <body class="text-slate-800">
 
-    <!-- HEADER -->
     <header class="bg-white/95 backdrop-blur-md shadow-sm border-b border-sky-100/60 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <div class="flex items-center gap-3 cursor-pointer" onclick="showPage('home')">
@@ -61,9 +54,7 @@
         </div>
     </header>
 
-    <!-- HOMEPAGE -->
     <div id="home-page">
-        <!-- Hero Section -->
         <section class="hero-bg text-white py-36 rounded-b-[40px] shadow-lg">
             <div class="max-w-4xl mx-auto text-center px-6">
                 <span class="bg-sky-500/30 backdrop-blur-md text-sky-300 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full border border-sky-400/30">Premium Real Estate Portfolio</span>
@@ -76,7 +67,6 @@
             </div>
         </section>
 
-        <!-- Quick Categories Selection Filters -->
         <section class="max-w-6xl mx-auto -mt-12 px-6 relative z-10">
             <div class="bg-white p-4 rounded-3xl shadow-xl border border-sky-100 grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div onclick="showPage('properties')" class="p-4 rounded-2xl bg-sky-50/60 hover:bg-sky-50 border border-sky-100/50 text-center cursor-pointer transition-colors group">
@@ -98,7 +88,6 @@
             </div>
         </section>
 
-        <!-- Trust Features -->
         <section class="py-20">
             <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-center">
                 <div class="p-4">
@@ -119,7 +108,6 @@
             </div>
         </section>
 
-        <!-- Featured Section -->
         <section class="py-16 bg-slate-50 border-t border-b border-sky-100/40">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="flex justify-between items-end mb-10">
@@ -134,55 +122,65 @@
         </section>
     </div>
 
-    <!-- MAIN EXPLORE PAGE WITH INTEGRATED LIVE INTERACTIVE MAP -->
     <div id="properties-page" class="hidden max-w-7xl mx-auto px-6 py-12">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-10">
             <div>
-                <h1 class="text-4xl font-black text-slate-900 tracking-tight">Eksploruj Wybrzeże</h1>
-                <p class="text-slate-500 text-sm mt-1">Filtruj zweryfikowane domy i przeglądaj lokalizacje na żywo na interaktywnej mapie.</p>
+                <h1 class="text-4xl font-black text-slate-900 tracking-tight">Eksploruj Wybrzeże Włoch</h1>
+                <p class="text-slate-500 text-sm mt-1">Przeglądaj luksusowe lokalizacje na żywo wzdłuż linii brzegowej Adriatyku.</p>
             </div>
             
-            <!-- Quick Filter Controls Form Bar -->
             <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-600">
-                <select class="bg-white border border-slate-200 p-3 rounded-xl outline-none focus:border-sky-500"><option>Lokalizacja: Wszystkie</option><option>Chorwacja</option><option>Włochy</option></select>
-                <select class="bg-white border border-slate-200 p-3 rounded-xl outline-none focus:border-sky-500"><option>Odległość od morza: < 50m</option><option>< 200m</option></select>
-                <select class="bg-white border border-slate-200 p-3 rounded-xl outline-none focus:border-sky-500"><option>Pokoje: Dowolna</option><option>3+ Pokoje</option></select>
+                <select class="bg-white border border-slate-200 p-3 rounded-xl outline-none focus:border-sky-500"><option>Lokalizacja: Włochy (Adriatyk)</option></select>
+                <select class="bg-white border border-slate-200 p-3 rounded-xl outline-none focus:border-sky-500"><option>Odległość od morza: &lt; 100m</option></select>
+                <select class="bg-white border border-slate-200 p-3 rounded-xl outline-none focus:border-sky-500"><option>Pokoje: Wszystkie</option></select>
             </div>
         </div>
 
         <div class="grid lg:grid-cols-12 gap-8">
-            <!-- Listings Cards Matrix List (Left Side) -->
             <div class="lg:col-span-7 grid md:grid-cols-2 gap-6" id="all-properties"></div>
             
-            <!-- Interactive Map Wrapper Box Component (Right Side) -->
-            <div class="lg:col-span-5 h-[620px] rounded-3xl overflow-hidden shadow-md border border-sky-100 relative sticky top-28">
-                <div class="map-canvas w-full h-full relative">
-                    <!-- Interactive Active Pins synced to data logic array metrics -->
-                    <div onclick="triggerDetailsById(1)" class="absolute top-1/4 left-1/3 bg-sky-600 text-white font-bold text-xs px-3 py-1.5 rounded-full shadow-lg border-2 border-white cursor-pointer transform hover:scale-110 hover:bg-slate-900 transition-all">
-                        320 000 PLN
+            <div class="lg:col-span-5 h-[620px] rounded-3xl overflow-hidden shadow-md border border-sky-100 relative sticky top-28 bg-[#aadaff]">
+                <div class="w-full h-full relative overflow-hidden" style="background-image: url('https://static-maps.yandex.ru/1.x/?ll=13.93,42.82&z=11&l=map&size=600,620'); background-size: cover; background-position: center;">
+                    
+                    <div class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1.5 rounded-lg tracking-wider uppercase border border-white/10 z-20">
+                        <i class="fas fa-map-marked-alt text-sky-400 mr-1"></i> Wybrzeże Włoch (Abruzja)
                     </div>
-                    <div onclick="triggerDetailsById(2)" class="absolute top-1/2 left-2/3 bg-sky-600 text-white font-bold text-xs px-3 py-1.5 rounded-full shadow-lg border-2 border-white cursor-pointer transform hover:scale-110 hover:bg-slate-900 transition-all">
-                        480 000 PLN
+
+                    <div onclick="triggerDetailsById(1)" class="absolute top-[45%] left-[62%] -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-10">
+                        <div class="bg-sky-600 text-white font-black text-[11px] px-2.5 py-1.5 rounded-xl shadow-lg border-2 border-white group-hover:bg-slate-900 group-hover:scale-105 transition-all whitespace-nowrap">
+                            <i class="fas fa-home mr-1 text-sky-300"></i> 320k PLN
+                        </div>
+                        <div class="w-3 h-3 bg-sky-600 border-2 border-white rounded-full mx-auto -mt-1 shadow animate-bounce"></div>
                     </div>
-                    <div onclick="triggerDetailsById(3)" class="absolute top-2/3 left-1/2 bg-sky-600 text-white font-bold text-xs px-3 py-1.5 rounded-full shadow-lg border-2 border-white cursor-pointer transform hover:scale-110 hover:bg-slate-900 transition-all">
-                        395 000 PLN
+
+                    <div onclick="triggerDetailsById(2)" class="absolute top-[22%] left-[55%] -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-10">
+                        <div class="bg-sky-600 text-white font-black text-[11px] px-2.5 py-1.5 rounded-xl shadow-lg border-2 border-white group-hover:bg-slate-900 group-hover:scale-105 transition-all whitespace-nowrap">
+                            <i class="fas fa-building mr-1 text-sky-300"></i> 480k PLN
+                        </div>
+                        <div class="w-3 h-3 bg-sky-600 border-2 border-white rounded-full mx-auto -mt-1 shadow animate-bounce"></div>
                     </div>
+
+                    <div onclick="triggerDetailsById(3)" class="absolute top-[78%] left-[74%] -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-10">
+                        <div class="bg-sky-600 text-white font-black text-[11px] px-2.5 py-1.5 rounded-xl shadow-lg border-2 border-white group-hover:bg-slate-900 group-hover:scale-105 transition-all whitespace-nowrap">
+                            <i class="fas fa-gem mr-1 text-sky-300"></i> 395k PLN
+                        </div>
+                        <div class="w-3 h-3 bg-sky-600 border-2 border-white rounded-full mx-auto -mt-1 shadow animate-bounce"></div>
+                    </div>
+
                 </div>
-                <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md px-4 py-3 rounded-2xl text-xs font-semibold text-slate-700 flex items-center gap-2 border border-sky-100 shadow">
-                    <i class="fas fa-info-circle text-sky-600 text-base"></i> Wybierz przypinkę na mapie, by natychmiast otworzyć specyfikację techniczną.
+                <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl text-xs font-semibold text-slate-700 flex items-center gap-2 border border-sky-100 shadow-sm z-20">
+                    <i class="fas fa-info-circle text-sky-600 text-base"></i> Kliknij przypinkę na mapie, aby natychmiast zobaczyć szczegóły oferty.
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- DETAIL SCREEN PAGE -->
     <div id="detail-page" class="hidden max-w-7xl mx-auto px-6 py-12">
         <button onclick="backToExplore()" class="inline-flex items-center gap-2 text-sm font-bold text-sky-600 mb-8 hover:text-sky-700 transition-colors bg-sky-50 px-4 py-2 rounded-xl border border-sky-100">
             <i class="fas fa-chevron-left text-xs"></i> Wróć do filtrowania ofert
         </button>
 
         <div class="grid lg:grid-cols-12 gap-10">
-            <!-- Left Panel Frame Content Element Showcase -->
             <div class="lg:col-span-8">
                 <div class="relative mb-6 rounded-3xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100">
                     <img id="main-image" class="w-full h-[520px] object-cover" alt="Main View Screen Preview">
@@ -201,19 +199,17 @@
                         <div class="text-3xl font-black text-sky-600" id="property-price"></div>
                     </div>
 
-                    <!-- Technical Core Specs Indicators -->
                     <div class="grid grid-cols-4 gap-4 py-4 border-t border-b border-slate-100 text-center">
                         <div class="p-2 bg-slate-50 rounded-xl"><i class="fas fa-bed text-sky-600 mb-1"></i><p class="text-xs font-bold text-slate-700">3 Pokoje</p></div>
                         <div class="p-2 bg-slate-50 rounded-xl"><i class="fas fa-shower text-sky-600 mb-1"></i><p class="text-xs font-bold text-slate-700">2 Łazienki</p></div>
-                        <div class="p-2 bg-slate-50 rounded-xl"><i class="fas fa-swimming-pool text-sky-600 mb-1"></i><p class="text-xs font-bold text-slate-700">Inifinity Pool</p></div>
-                        <div class="p-2 bg-slate-50 rounded-xl"><i class="fas fa-water text-sky-600 mb-1"></i><p class="text-xs font-bold text-slate-700">< 100m Sea</p></div>
+                        <div class="p-2 bg-slate-50 rounded-xl"><i class="fas fa-swimming-pool text-sky-600 mb-1"></i><p class="text-xs font-bold text-slate-700">Infinity Pool</p></div>
+                        <div class="p-2 bg-slate-50 rounded-xl"><i class="fas fa-water text-sky-600 mb-1"></i><p class="text-xs font-bold text-slate-700">&lt; 100m Sea</p></div>
                     </div>
 
                     <div id="property-description" class="prose text-slate-600 leading-relaxed text-sm"></div>
                 </div>
             </div>
 
-            <!-- Side Right Widget Sidebar Form Node Component -->
             <div class="lg:col-span-4">
                 <div class="sticky-form bg-slate-900 rounded-3xl shadow-xl p-8 text-white border border-slate-800">
                     <h3 class="text-xl font-bold tracking-tight text-center mb-1">Zabezpiecz Portfel Inwestycyjny</h3>
@@ -243,7 +239,6 @@
         </div>
     </div>
 
-    <!-- MISSION ABOUT INFO VIEW PAGE -->
     <div id="about-page" class="hidden max-w-4xl mx-auto px-6 py-20">
         <h2 class="text-4xl font-black text-slate-900 tracking-tight mb-6">Dlaczego inwestycje nad Adriatykiem posiadają stałą wartość?</h2>
         <div class="space-y-6 text-slate-600 leading-relaxed text-md">
@@ -252,7 +247,6 @@
         </div>
     </div>
 
-    <!-- FOOTER SYSTEM SECTION -->
     <footer class="bg-slate-950 text-slate-400 text-xs py-12 border-t border-slate-900 mt-24">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
             <p>&copy; 2026 Adriatica Homes Real Estate. Wszystkie prawa zastrzeżone.</p>
@@ -263,7 +257,6 @@
         </div>
     </footer>
 
-    <!-- CORE SCRIPT IMPLEMENTATION ARCHITECTURE -->
     <script>
         const properties = [
             {
@@ -292,13 +285,13 @@
             {
                 id: 3,
                 title: "Apartament premium z widokiem panoramicznym",
-                location: "Hvar, Chorwacja",
+                location: "Pineto, Włochy",
                 price: "395 000 PLN",
                 images: [
                     "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
                     "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80"
                 ],
-                description: "<p>Kameralna, prestiżowa lokalizacja rezydencyjna na wyspie Hvar. Panoramiczne przeszklenia dają nieograniczony wizualny wgląd w archipelag wysp.</p>"
+                description: "<p>Kameralna, prestiżowa lokalizacja rezydencyjna w Pineto. Panoramiczne przeszklenia dają nieograniczony wizualny wgląd w czyste morze i sosnowe lasy wybrzeża.</p>"
             }
         ];
 
@@ -327,7 +320,6 @@
                     </div>
                 `;
 
-                // Render into standard elements
                 const fCard = document.createElement('div'); fCard.innerHTML = cardHTML; fCard.onclick = () => showDetail(prop);
                 const aCard = document.createElement('div'); aCard.innerHTML = cardHTML; aCard.onclick = () => showDetail(prop);
                 

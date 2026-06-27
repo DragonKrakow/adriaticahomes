@@ -6,7 +6,6 @@
     <title>Bridge House - Ekskluzywne Nieruchomości Nad Adriatykiem</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <!-- Leaflet.js Mapping Infrastructure -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
@@ -28,11 +27,9 @@
 </head>
 <body class="text-slate-800 antialiased">
 
-    <!-- NAVIGATION BAR -->
     <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-[1000] border-b border-slate-100 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
             
-            <!-- Super-Sized Logo Container Area -->
             <div class="flex items-center gap-2 cursor-pointer" onclick="showPage('home')">
                 <img src="https://raw.githubusercontent.com/DragonKrakow/adriaticahomes/main/logo.jpeg"
                      alt="Bridge House"
@@ -59,9 +56,7 @@
         </div>
     </nav>
 
-    <!-- MAIN VIEW -->
     <div id="home-page" class="animate-fadeIn">
-        <!-- Hero Header -->
         <header class="hero-bg min-h-[85vh] flex items-center justify-center text-center px-4 relative">
             <div class="max-w-4xl mx-auto text-white z-10">
                 <span class="bg-white/10 backdrop-blur-md text-sky-300 text-xs tracking-widest font-bold px-4 py-2 rounded-full uppercase mb-6 inline-block border border-white/10">Włoska Riwiera & Adriatyk</span>
@@ -80,7 +75,6 @@
             </div>
         </header>
 
-        <!-- Blue Banner (Investment Indicators) -->
         <section class="bg-gradient-to-r from-sky-900 via-indigo-950 to-slate-900 text-white py-12 shadow-inner">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center sm:text-left items-center">
                 <div class="flex items-center gap-4 justify-center sm:justify-start border-b sm:border-b-0 sm:border-r border-white/10 pb-6 sm:pb-0">
@@ -107,7 +101,6 @@
             </div>
         </section>
 
-        <!-- Luxury Investment Pillars Section -->
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-3xl font-bold text-slate-900 tracking-tight mb-4">Filary Inwestycji Luksusowych Bridge House</h2>
@@ -133,7 +126,6 @@
             </div>
         </section>
 
-        <!-- INTEGRATED OFFERS & MAP SECTION -->
         <section id="map-section" class="border-t border-slate-200 bg-slate-50/50 py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-8">
@@ -143,9 +135,7 @@
                 </div>
                 
                 <div class="flex flex-col lg:flex-row gap-8 h-[650px] overflow-hidden">
-                    <!-- Left Side: Listings Column -->
                     <div id="properties-grid" class="w-full lg:w-7/12 h-full overflow-y-auto pr-2 grid grid-cols-1 sm:grid-cols-2 gap-6 custom-scrollbar"></div>
-                    <!-- Right Side: Map Container Layout -->
                     <div class="w-full lg:w-5/12 h-full relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-[#eef5f9]">
                         <div id="map-container" class="w-full h-full z-10"></div>
                     </div>
@@ -154,7 +144,6 @@
         </section>
     </div>
 
-    <!-- DETAILED PROPERTY SINGLE VIEW -->
     <div id="detail-page" class="hidden bg-slate-50/30 py-12 animate-fadeIn">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <button onclick="backToExplore()" class="inline-flex items-center gap-2 text-slate-500 hover:text-sky-600 font-semibold text-sm mb-8 transition-colors bg-white px-4 py-2 rounded-xl shadow-sm border border-slate-100">
@@ -212,140 +201,89 @@
         </div>
     </div>
 
-    <!-- O NAS & INVESTOR SAFETY VIEW WITH FAQ INTEGRATED -->
     <div id="about-page" class="hidden bg-slate-50/30 py-16 animate-fadeIn">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-8 sm:p-12 mb-12">
-                <span class="text-sky-600 font-bold text-xs uppercase tracking-widest block mb-2">O nas</span>
-                <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-6">Doskonałość i przejrzystość w inwestycjach nieruchomościowych we Włoszech</h1>
+                <span class="text-sky-600 font-bold text-xs uppercase tracking-widest block mb-2">Misja i transparentność</span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-6">Doskonałość i prężność w inwestycjach nieruchomościowych z Bridge House</h1>
                 
                 <div class="prose prose-slate max-w-none text-slate-600 text-sm sm:text-base space-y-6 leading-relaxed">
                     <p>
-                        Nasz projekt narodził się z krytycznej observation włoskiego rynku nieruchomości, który często charakteryzuje się nadmierną fragmentacją oraz ofertą dla klientów międzynarodowych, pozbawioną odpowiednich gwarancji prawnych i technicznych. Zrozumieliśmy, że dla inwestora zafascynowanego Włochami, który nie posiada szczegółowej wiedzy o lokalnych realiach, sama „pośrednictwo” to zbyt mało.
+                        Nasz projekt narodził się z krytycznej obserwacji włoskiego rynku nieruchomości, który często charakteryzuje się nadmierną fragmentacją oraz ofertą dla klientów międzynarodowych pozbawioną odpowiednich gwarancji prawnych i technicznych. Zrozumieliśmy, że dla inwestora zafascynowanego Włochami, który nie posiada szczegółowej wiedzy o lokalnych realiach, samo „pośrednictwo” to zdecydowanie za mało.
                     </p>
                     <p>
-                        Naszą misją jest oferowanie wsparcia wielodyscyplinarnej grupy ekspertów (<strong>Task Force</strong>), gwarantującej bezpieczeństwo procesu akwizycji, dostępnej na każde żądanie klienta. Klient pozostaje w pełni autonomiczny – ma swobodę korzystania z naszego wsparcia, przy zachowaniu pełnego dostępu do portalu i współpracujących z nami agencji.
+                        Naszą misją jest oferowanie wsparcia wielodyscyplinarnej grupy experts (<strong>Task Force</strong>), gwarantującej bezpieczeństwo procesu akwizycji, dostępnej na każde żądanie klienta. Klient pozostaje w pełni autonomiczny – ma swobodę korzystania z naszego wsparcia, przy zachowaniu pełnego dostępu do portalu i współpracujących z nami agencji.
                     </p>
                     
                     <h2 class="text-xl font-bold text-slate-900 pt-4">Nasze podejście: Swoboda wyboru i najwyższe standardy</h2>
-                    <p>Zrewolucjonizowaliśmy model doradztwa, odrzucając sztywne, narzucone z góry ograniczenia. Wierzymy, że jakość świadczonych usług powinna być jedyną podstawą współpracy.</p>
                     <ul class="space-y-3 list-none pl-0">
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-check text-emerald-500 mt-1"></i>
-                            <span><strong>Brak zbędnych powiązań i pełna transparentność:</strong> Nasza struktura usługowa nie jest etapem obowiązkowym. Klient ma pełną swobodę w bezpośrednim kontaktowaniu się z agencjami nieruchomości lub lokalnymi specjalistami.</span>
+                            <span><strong>Brak zbędnych powiązań i pełna transparentność:</strong> Nasza struktura usługowa nie stanowi etapu obowiązkowego. Klient ma pełną swobodę w bezpośrednim kontaktowaniu się z agencjami nieruchomości lub lokalnymi specjalistami.</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-check text-emerald-500 mt-1"></i>
-                            <span><strong>Państwa zaufany partner, gdy jest potrzebny:</strong> Nasza rola polega na oferowaniu kwalifikowanego i bezstronnego wsparcia w sytuacjach, w których uznają Państwo za konieczne skorzystanie z niezależnej sieci kontroli (super partes). Nie narzucamy wyłączności – angażujemy się wyłącznie tam, gdzie Państwo dostrzegają potrzebę weryfikacji.</span>
+                            <span><strong>Państwa zaufany partner, gdy jest potrzebny:</strong> Nasza rola polega na oferowaniu kwalifikowanego i bezstronnego wsparcia w sytuacjach, w których uznają Państwo za konieczne skorzystanie z niezależnego audytu prawnego lub budowlanego.</span>
                         </li>
                     </ul>
-
-                    <h2 class="text-xl font-bold text-slate-900 pt-4">Dlaczego warto nas wybrać: Wartość dodana Task Force</h2>
-                    <p>Nie jesteśmy agencją, która ogranicza klienta, lecz Państwa ramieniem operacyjnym we Włoszech, dostępnym na każde życzenie w każdej fazie inwestycji. Nasza metodologia wyróżnia się trzema filarami:</p>
-                    <ul class="space-y-3 list-none pl-0">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-star text-sky-500 mt-1"></i>
-                            <span><strong>Rygorystyczna selekcja partnerów:</strong> Współpracujemy wyłącznie z agentami nieruchomości, prawnikami i technikami o udokumentowanym doświadczeniu. Mogą Państwo kontaktować się z nimi bezpośrednio lub korzystać z naszej sieci, by mieć pewność, że przestrzegają oni surowych norm etycznych i deontologicznych.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-language text-sky-500 mt-1"></i>
-                            <span><strong>Mediacja kulturowa i językowa:</strong> Nasz zespół działa jako pomost między kulturą polską a włoską, eliminując bariery komunikacyjne. Wsparcie językowe jest do Państwa dyspozycji, aby zapewnić klarowność i bezpieczeństwo negocjacji.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-sliders text-sky-500 mt-1"></i>
-                            <span><strong>Model "szyty na miarę" (Tailor-made) bez zobowiązań:</strong> Odrzucamy sztywne ryczałty i długoterminowe umowy. Nasz serwis jest projektowany pod kątem specyfiki konkretnego aktywa. To Państwo decydują, które etapy procesu wymagają naszej superwizji, płacąc wyłącznie za to wsparcie techniczne czy prawne, którego faktycznie Państwo potrzebują.</span>
-                        </li>
-                    </ul>
-
-                    <h2 class="text-xl font-bold text-slate-900 pt-4">Bezpieczeństwo i profilaktyka: Nasze wsparcie opcjonalne</h2>
-                    <p>Zakup nieruchomości we Włoszech nie musi być procesem obarczonym ryzykiem. Dzięki naszej sieci oferujemy asystę najwyższej klasy:</p>
-                    <ul class="space-y-2 list-disc pl-5">
-                        <li><strong>Due Diligence techniczna i prawna:</strong> Analizujemy każdą nieruchomość, aby zapobiec problemom urbanistycznym, samowolom budowlanym czy nieujawnionym ograniczeniom krajobrazowym.</li>
-                        <li><strong>Pełna ochrona:</strong> Dzięki partnerstwu z wyspecjalizowanymi brokerami ubezpieczeniowymi, pomagamy zabezpieczyć mienie od wszelkich ryzyk, niezależnie od ścieżki zakupu.</li>
-                        <li><strong>Wsparcie ciągłe "A La Carte":</strong> Od pierwszego kontaktu po podpisanie aktu notarialnego, wspieramy Państwa zgodnie z Państwa wytycznymi, minimalizując ryzyko sporów i maksymalizując spokój płynący z udanej inwestycji.</li>
-                    </ul>
-
-                    <h2 class="text-xl font-bold text-slate-900 pt-4">Nasz cel</h2>
-                    <p>Pragniemy zapewnić Państwu najbezpieczniejszą drogę na włoskim rynku nieruchomości, pozostawiając zawsze pełną swobodę w prowadzeniu negocjacji. Naszą misją jest przekształcenie biurokratycznej złożoności Włoch w przejrzystą, chronioną i zorientowaną na wyniki procedurę, z gwarancją ekspercką dostępną dokładnie wtedy, gdy jest pożądana.</p>
-                    <p class="font-bold text-slate-900">Czy są Państwo gotowi inwestować świadomie? Zapraszamy do współpracy. Nasze kompetencje są do Państwa dyspozycji, aby przekształcić Państwa wizję w solidną rzeczywistość nieruchomościową, w duchu pełnej autonomii.</p>
-                    
-                    <div class="border-t border-slate-100 pt-6 mt-6">
-                        <h2 class="text-xl font-bold text-slate-900 mb-2">Zakup nieruchomości we Włoszech: Bezpieczna realizacja marzeń</h2>
-                        <p>Wielu inwestorów marzy o posiadłości we Włoszech – kraju, który oferuje wyjątkowy styl życia i doskonałe perspektywy kapitałowe. Jednak za pocztówkowym krajobrazem często kryją się pułapki prawne i techniczne, które mogą zamienić inwestycję w kosztowny problem. W poniższym Q&A wskazujemy, jak bezpiecznie poruszać się po tym rynku.</p>
-                    </div>
                 </div>
             </div>
 
-            <!-- COMPLIANCE & SAFETY FAQ ACCORDIONS -->
             <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-8 sm:p-12">
                 <div class="flex items-center gap-3 mb-4">
                     <span class="w-3 h-3 rounded-full bg-red-500 animate-pulse"></span>
-                    <span class="text-xs font-bold text-red-600 tracking-wider uppercase">Q&A: Inwestycja we Włoszech – pytania kluczowe</span>
+                    <span class="text-xs font-bold text-red-600 tracking-wider uppercase">Świadomość Ryzyka rynkowego</span>
                 </div>
-                <h2 class="text-2xl font-black text-slate-900 tracking-tight mb-6">Instrukcja Bezpieczeństwa Transakcyjnego</h2>
+                <h2 class="text-2xl font-black text-slate-900 tracking-tight mb-2">Instrukcja Bezpieczeństwa Transakcyjnego</h2>
+                <p class="text-slate-500 text-sm mb-8">Rynek zagraniczny niesie za sobą wyzwania prawne. Przygotowaliśmy kompleksowe kompendium pytań i odpowiedzi, które uchronią Twój kapitał przed nieprawidłowościami.</p>
 
                 <div class="space-y-4">
                     <div class="border border-slate-100 rounded-2xl overflow-hidden faq-item">
                         <button onclick="toggleFaq(this)" class="w-full bg-slate-50/60 hover:bg-slate-50 px-6 py-5 flex justify-between items-center text-left transition-colors">
-                            <span class="font-bold text-sm text-slate-800">Jakie główne ryzyka przy zakupie nieruchomości do remontu, np. na Sycylii?</span>
+                            <span class="font-bold text-sm text-slate-800">Jakie główne zagrożenia na rynku zagranicznym ujawniają niezależne audyty śledcze?</span>
                             <i class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
                         </button>
-                        <div class="faq-body hidden bg-white px-6 py-5 border-t border-slate-50 text-xs sm:text-sm text-slate-600 space-y-2">
-                            <p><strong>Odpowiedź:</strong> Największym wyzwaniem jest asymetria informacji. Inwestorzy polegający na niezweryfikowanych pośrednikach często nabywają obiekty z samowolami budowlanymi, niezgodną z prawem zmianą przeznaczenia (np. budynki gospodarcze oferowane jako mieszkalne) lub wadami konstrukcyjnymi. Często projekt przedstawiony przez sprzedającego jest niemożliwy do zrealizowania w świetle lokalnych przepisów.</p>
+                        <div class="faq-body hidden bg-white px-6 py-5 border-t border-slate-50 text-xs sm:text-sm text-slate-600">
+                            <p>Analizy nadużyć rynkowych wykazują ryzyka związane z nieformalnym pośrednictwem, sztucznym zawyżaniem cen, ukrywaniem samowoli budowlanych oraz brakiem weryfikacji faktycznych uprawnień osób reprezentujących sprzedającego.</p>
                         </div>
                     </div>
 
                     <div class="border border-slate-100 rounded-2xl overflow-hidden faq-item">
                         <button onclick="toggleFaq(this)" class="w-full bg-slate-50/60 hover:bg-slate-50 px-6 py-5 flex justify-between items-center text-left transition-colors">
-                            <span class="font-bold text-sm text-slate-800">Jak rzetelnie zweryfikować wiarygodność podmiotu oferującego nieruchomość?</span>
+                            <span class="font-bold text-sm text-slate-800">Czym grozi zakup nieruchomości z nielegalną dobudową lub niezgodnością katastralną?</span>
                             <i class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
                         </button>
-                        <div class="faq-body hidden bg-white px-6 py-5 border-t border-slate-50 text-xs sm:text-sm text-slate-600 space-y-2">
-                            <p><strong>Odpowiedź:</strong> Nie warto sugerować się wyłącznie wizerunkiem czy referencjami w social mediach. Niezbędna jest niezależna weryfikacja kwalifikacji zawodowych (rejestry architektów, geodetów) w publicznych urzędach. Należy zachować szczególną czujność wobec podmiotów promujących płatności gotówkowe powyżej limitów ustawowych lub ograniczających kontakt z właścicielem.</p>
+                        <div class="faq-body hidden bg-white px-6 py-5 border-t border-slate-50 text-xs sm:text-sm text-slate-600">
+                            <p>We Włoszech odpowiedzialność za wady prawne i urbanistyczne przechodzi na nowego właściciela. Niezgodności mogą skutkować wysokimi karami administracyjnymi, brakiem możliwości uzyskania kredytu, nakazem rozbiórki lub ogromnymi kosztami napraw konstrukcyjnych.</p>
                         </div>
                     </div>
 
                     <div class="border border-slate-100 rounded-2xl overflow-hidden faq-item">
                         <button onclick="toggleFaq(this)" class="w-full bg-slate-50/60 hover:bg-slate-50 px-6 py-5 flex justify-between items-center text-left transition-colors">
-                            <span class="font-bold text-sm text-slate-800">Na co zwrócić uwagę w kosztorysach remontowych i przy rządowych bonusach?</span>
+                            <span class="font-bold text-sm text-slate-800">Jak uchronić się przed utratą gotówki przy transakcjach na Sycylii lub we Włoszech?</span>
                             <i class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
                         </button>
-                        <div class="faq-body hidden bg-white px-6 py-5 border-t border-slate-50 text-xs sm:text-sm text-slate-600 space-y-2">
-                            <p><strong>Odpowiedź:</strong> Podstawą jest szczegółowy i przejrzysty kosztorys (computo metrico). Nieuzasadnione koszty drobnych prac czy obietnice bonusów podatkowych oparte na projektach naruszających restrykcyjne wymogi urbanistyczne lub konserwatorskie, powinny być sygnałem ostrzegawczym.</p>
+                        <div class="faq-body hidden bg-white px-6 py-5 border-t border-slate-50 text-xs sm:text-sm text-slate-600">
+                            <p>Każda płatność musi być udokumentowana przelewem bankowym i oficjalną fakturą. Negocjacje powinny zapewniać pełną śledzalność środków bezpośrednio do podmiotu uprawnionego (właściciela lub konta powierniczego notariusza - deposito del prezzo), z całkowitym pominięciem nieformalnych pośredników.</p>
                         </div>
                     </div>
 
                     <div class="border border-slate-100 rounded-2xl overflow-hidden faq-item">
                         <button onclick="toggleFaq(this)" class="w-full bg-slate-50/60 hover:bg-slate-50 px-6 py-5 flex justify-between items-center text-left transition-colors">
-                            <span class="font-bold text-sm text-slate-800">Jak skutecznie zabezpieczyć interesy w fazie transakcji?</span>
+                            <span class="font-bold text-sm text-slate-800">Dlaczego nie należy polegać wyłącznie na agencji nieruchomości reprezentującej sprzedającego?</span>
                             <i class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
                         </button>
-                        <div class="faq-body hidden bg-white px-6 py-5 border-t border-slate-50 text-xs sm:text-sm text-slate-600 space-y-3">
-                            <p><strong>Odpowiedź:</strong></p>
-                            <ul class="list-disc pl-5 space-y-1">
-                                <li><strong>Transparentność finansowa:</strong> Każda płatność musi być udokumentowana przelewem i fakturą.</li>
-                                <li><strong>Weryfikacje prawne:</strong> Należy upewnić się, że stan katastralny (księgi wieczyste) w pełni odpowiada stanowi faktycznemu nieruchomości.</li>
-                                <li><strong>Bezpośredni kontakt:</strong> Negocjacje powinny zapewniać pełną śledzalność płatności bezpośrednio do podmiotu uprawnionego, z wyłączeniem niejasnych pośredników.</li>
-                                <li><strong>Niezależni eksperci:</strong> Przed podpisaniem jakiejkolwiek umowy, warto powierzyć audyt (due diligence) niezależnym doradcom, niepowiązanym z agencją pośredniczącą.</li>
-                            </ul>
+                        <div class="faq-body hidden bg-white px-6 py-5 border-t border-slate-50 text-xs sm:text-sm text-slate-600">
+                            <p>Zakup nieruchomości za granicą wymaga kompetencji prawnych i technicznych wykraczających poza standardowe usługi agencji nieruchomości, która ustawowo reprezentuje interesy sprzedającego dążąc do sfinalizowania umowy. Niezależny audyt gwarantuje bezstronną ocenę ryzyka.</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="mt-10 pt-8 border-t border-slate-100 text-slate-600 text-sm space-y-4">
-                    <h3 class="font-bold text-slate-900 text-lg">Dlaczego niezależne doradztwo to najlepsza obrona?</h3>
-                    <p>Doświadczenia inwestorów pokazują, że entuzjazm nigdy nie powinien zastępować ostrożności. Zakup nieruchomości za granicą wymaga kompetencji prawnych i technicznych znacznie wykraczających poza standardowe usługi agencji.</p>
-                    <p>Jako profesjonalista, moim celem jest towarzyszenie klientowi w każdej fazie procesu: od weryfikacji katastralnej i urbanistycznej, po zarządzanie transparentnością kontraktów i koordynację prac technicznych zgodnie z prawem.</p>
-                    <p class="font-medium text-slate-800">Nie pozwól, aby zaufanie zostało ulokowane w niewłaściwych rękach. Zapraszamy do kontaktu w celu wstępnej oceny Państwa strategii zakupowej lub profesjonalnej konsultacji dotyczącej wybranej nieruchomości. Spokój inwestycji zaczyna się od profesjonalnej i bezstronnej weryfikacji.</p>
-                    <p class="text-xs text-slate-400 italic pt-2">Nota: Powyższe informacje opierają się na analizie udokumentowanych przypadków nieprawidłowości na włoskim rynku nieruchomości. Ostrożność i niezależna weryfikacja pozostają fundamentami każdej udanej transakcji.</p>
                 </div>
             </div>
 
         </div>
     </div>
 
-    <!-- MAIN FOOTER BLOCK -->
     <footer class="bg-slate-900 text-slate-400 text-xs border-t border-slate-800 py-12 mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2">
@@ -356,7 +294,6 @@
         </div>
     </footer>
 
-    <!-- INTERACTION LOGIC ARCHITECTURE -->
     <script>
         const dataStore = [
             {
@@ -414,7 +351,7 @@
             L.control.zoom({ position: 'bottomright' }).addTo(mapInstance);
             
             L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-                attribution: '&copy; OpenStreetMap contributors'
+                attribution: '&copy; OpenStreetMapcontributors'
             }).addTo(mapInstance);
 
             populateMapMarkers();

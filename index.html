@@ -21,20 +21,21 @@
         .custom-scrollbar::-webkit-scrollbar { width: 6px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: #F1F5F9; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
+        .custom-map-badge { background: none; border: none; }
     </style>
 </head>
 <body class="text-slate-800 antialiased">
 
     <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-[1000] border-b border-slate-100 shadow-sm transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
             
-            <div class="flex items-center gap-2 cursor-pointer" onclick=\"showPage('home')\">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="showPage('home')">
                 <img src="https://raw.githubusercontent.com/DragonKrakow/adriaticahomes/main/logo.jpeg"
                      alt="Adriatica Homes"
-                     class="h-12 w-auto object-contain"
+                     class="h-16 w-auto object-contain max-w-[220px]"
                      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                 <div style="display:none" class="items-center gap-3">
-                    <div class="w-10 h-10 bg-sky-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-md shadow-sky-200">A</div>
+                    <div class="w-12 h-12 bg-sky-600 rounded-xl flex items-center justify-center text-white font-bold text-2xl shadow-md shadow-sky-200">A</div>
                     <div>
                         <span class="text-2xl font-extrabold text-slate-900 tracking-tight">Adriatica</span>
                         <span class="text-sky-600 font-bold">Homes</span>
@@ -42,20 +43,20 @@
                 </div>
             </div>
 
-            <div class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm tracking-wide">
+            <div class="hidden md:flex items-center gap-8 font-semibold text-slate-600 text-sm tracking-wide uppercase">
                 <span class="hover:text-sky-600 cursor-pointer transition-colors" onclick="showPage('home')">Strona Główna</span>
                 <span class="hover:text-sky-600 cursor-pointer transition-colors" onclick="showPage('properties')">Oferty Premium</span>
                 <span class="hover:text-sky-600 cursor-pointer transition-colors" onclick="showPage('about')">O Nas & Bezpieczeństwo</span>
             </div>
             
-            <button onclick="showPage('properties')" class="bg-slate-900 hover:bg-sky-600 text-white px-6 py-3 rounded-xl font-semibold text-xs tracking-wider uppercase transition-all shadow-sm">
-                Eksploruj
+            <button onclick="showPage('properties')" class="bg-slate-900 hover:bg-sky-600 text-white px-6 py-3 rounded-xl font-bold text-xs tracking-wider uppercase transition-all shadow-sm flex items-center gap-2">
+                <i class="fas fa-search-location"></i> Zobacz Mapę
             </button>
         </div>
     </nav>
 
     <div id="home-page" class="animate-fadeIn">
-        <header class="hero-bg min-h-[85vh] flex items-center justify-center text-center px-4 relative">
+        <header class="hero-bg min-h-[75vh] flex items-center justify-center text-center px-4 relative">
             <div class="max-w-4xl mx-auto text-white z-10">
                 <span class="bg-white/10 backdrop-blur-md text-sky-300 text-xs tracking-widest font-bold px-4 py-2 rounded-full uppercase mb-6 inline-block border border-white/10">Włoska Riwiera & Adriatyk</span>
                 <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-none mb-6">Inwestuj Świadomie i Bezpiecznie we Włoszech</h1>
@@ -73,6 +74,27 @@
             </div>
         </header>
 
+        <section class="max-w-6xl mx-auto -mt-12 px-6 relative z-10">
+            <div class="bg-white p-4 rounded-3xl shadow-xl border border-sky-100 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div onclick="showPage('properties')" class="p-4 rounded-2xl bg-sky-50/60 hover:bg-sky-50 border border-sky-100/50 text-center cursor-pointer transition-colors group">
+                    <i class="fas fa-umbrella-beach text-sky-600 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+                    <p class="text-xs font-bold text-slate-800 tracking-wide uppercase">Beachfront</p>
+                </div>
+                <div onclick="showPage('properties')" class="p-4 rounded-2xl bg-sky-50/60 hover:bg-sky-50 border border-sky-100/50 text-center cursor-pointer transition-colors group">
+                    <i class="fas fa-gem text-sky-600 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+                    <p class="text-xs font-bold text-slate-800 tracking-wide uppercase">Luxury Villas</p>
+                </div>
+                <div onclick="showPage('properties')" class="p-4 rounded-2xl bg-sky-50/60 hover:bg-sky-50 border border-sky-100/50 text-center cursor-pointer transition-colors group">
+                    <i class="fas fa-building text-sky-600 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+                    <p class="text-xs font-bold text-slate-800 tracking-wide uppercase">New Developments</p>
+                </div>
+                <div onclick="showPage('properties')" class="p-4 rounded-2xl bg-sky-50/60 hover:bg-sky-50 border border-sky-100/50 text-center cursor-pointer transition-colors group">
+                    <i class="fas fa-chart-line text-sky-600 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+                    <p class="text-xs font-bold text-slate-800 tracking-wide uppercase">Investment</p>
+                </div>
+            </div>
+        </section>
+
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-3xl font-bold text-slate-900 tracking-tight mb-4">Dlaczego Adriatica Homes?</h2>
@@ -80,411 +102,339 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
-                    <div class="w-12 h-12 bg-sky-50 text-sky-600 rounded-xl flex items-center justify-center text-xl mb-6 font-bold"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all text-center">
+                    <div class="w-14 h-14 bg-sky-50 text-sky-600 rounded-xl flex items-center justify-center text-xl mb-6 font-bold mx-auto"><i class="fa-solid fa-shield-halved"></i></div>
                     <h3 class="text-xl font-bold mb-3 text-slate-800">Niezależny Audyt Prawny</h3>
                     <p class="text-slate-500 text-sm leading-relaxed">Każda nieruchomość przechodzi rygorystyczny proces due diligence. Weryfikujemy księgi wieczyste, stan katastralny oraz zgodność urbanistyczną.</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
-                    <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-xl mb-6 font-bold"><i class="fa-solid fa-users-gear"></i></div>
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all text-center">
+                    <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-xl mb-6 font-bold mx-auto"><i class="fa-solid fa-users-gear"></i></div>
                     <h3 class="text-xl font-bold mb-3 text-slate-800">Task Force Ekspertów</h3>
                     <p class="text-slate-500 text-sm leading-relaxed">Zapewniamy bezpośrednie wsparcie inżynierów, prawników i doradców podatkowych, eliminując ryzyka ukrytych wad budowlanych i prawnych.</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
-                    <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center text-xl mb-6 font-bold"><i class="fa-solid fa-handshake-angle"></i></div>
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all text-center">
+                    <div class="w-14 h-14 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center text-xl mb-6 font-bold mx-auto"><i class="fa-solid fa-handshake-angle"></i></div>
                     <h3 class="text-xl font-bold mb-3 text-slate-800">Pełna Autonomia Klienta</h3>
                     <p class="text-slate-500 text-sm leading-relaxed">Nie narzucamy sztywnych struktur. Ty wybierasz zakres naszego wsparcia, zachowując bezpośredni kontakt i kontrolę nad finansami transakcji.</p>
                 </div>
             </div>
         </section>
+
+        <section class="py-16 bg-slate-50 border-t border-b border-sky-100/40">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex justify-between items-end mb-10">
+                    <div>
+                        <span class="text-xs font-bold text-sky-600 tracking-wider uppercase">Selekcja Ekspertów</span>
+                        <h2 class="text-3xl font-bold tracking-tight text-slate-900 mt-1">Polecane Inwestycje Nadmorskie</h2>
+                    </div>
+                    <button onclick="showPage('properties')" class="text-sm font-bold text-sky-600 hover:text-sky-700 flex items-center gap-1">
+                        Zobacz wszystko <i class="fas fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="featured-properties"></div>
+            </div>
+        </section>
     </div>
 
-    <div id="properties-page" class="hidden min-h-screen">
-        <div class="flex flex-col lg:flex-row h-[calc(100vh-5rem)] overflow-hidden">
-            <div class="w-full lg:w-7/12 h-full overflow-y-auto px-4 sm:px-6 lg:px-8 py-8 custom-scrollbar bg-slate-50/50">
-                <div class="mb-8">
-                    <span class="text-sky-600 font-bold text-xs uppercase tracking-widest block mb-2">Kolekcja Śródziemnomorska</span>
-                    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Dostępne Rezydencje Premium</h2>
-                    <p class="text-sm text-slate-500 mt-1">Wszystkie poniższe oferty zostały wstępnie zweryfikowane pod kątem formalno-prawnym.</p>
-                </div>
-                <div id="properties-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-6"></div>
+    <div id="properties-page" class="hidden max-w-7xl mx-auto px-6 py-12">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-10">
+            <div>
+                <h1 class="text-4xl font-black text-slate-900 tracking-tight">Eksploruj Wybrzeże Włoch</h1>
+                <p class="text-slate-500 text-sm mt-1">Przeglądaj luksusowe lokalizacje na żywo wzdłuż linii brzegowej Adriatyku.</p>
             </div>
-            <div class="w-full lg:w-5/12 h-2/5 lg:h-full relative border-t lg:border-t-0 lg:border-l border-slate-200">
-                <div id="map-container" class="w-full h-full z-10"></div>
+            <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-600">
+                <select class="bg-white border border-slate-200 p-3 rounded-xl outline-none focus:border-sky-500"><option>Lokalizacja: Włochy (Adriatyk)</option></select>
+                <select class="bg-white border border-slate-200 p-3 rounded-xl outline-none focus:border-sky-500"><option>Odległość od morza: &lt; 100m</option></select>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-8">
+            <div class="lg:col-span-7 grid md:grid-cols-2 gap-6" id="all-properties"></div>
+            
+            <div class="lg:col-span-5 h-[620px] rounded-3xl overflow-hidden shadow-md border border-sky-100 relative sticky top-28 bg-[#eef5f9]">
+                <div id="live-map" class="w-full h-full z-10"></div>
+                <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl text-xs font-semibold text-slate-700 flex items-center gap-2 border border-sky-100 shadow-sm z-[1000]">
+                    <i class="fas fa-info-circle text-sky-600 text-base"></i> Kliknij przypinkę ceny na mapie, aby otworzyć ofertę premium.
+                </div>
             </div>
         </div>
     </div>
 
-    <div id="detail-page" class="hidden bg-slate-50/30 py-12 animate-fadeIn">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <button onclick="backToExplore()" class="inline-flex items-center gap-2 text-slate-500 hover:text-sky-600 font-semibold text-sm mb-8 transition-colors bg-white px-4 py-2 rounded-xl shadow-sm border border-slate-100">
-                <i class="fa-solid fa-arrow-left"></i> Powrót do eksploracji ofert
-            </button>
-            
-            <div class="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12">
-                <div class="lg:col-span-7 relative bg-slate-900 h-[300px] sm:h-[450px] lg:h-full min-h-[400px]">
-                    <img id="detail-img" src="" alt="Property Visual View" class="w-full h-full object-cover transition-all duration-500">
-                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t irom-slate-900/80 via-slate-900/20 to-transparent p-6 flex justify-between items-center">
-                        <span id="detail-badge" class="bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-bold tracking-wider px-3 py-1.5 rounded-lg uppercase"></span>
-                        <div class="flex gap-2">
-                            <button onclick="prevImage()" class="w-10 h-10 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-xl text-white flex items-center justify-center transition-all"><i class="fa-solid fa-chevron-left"></i></button>
-                            <button onclick="nextImage()" class="w-10 h-10 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-xl text-white flex items-center justify-center transition-all"><i class="fa-solid fa-chevron-right"></i></button>
-                        </div>
+    <div id="detail-page" class="hidden max-w-7xl mx-auto px-6 py-12">
+        <button onclick="backToExplore()" class="inline-flex items-center gap-2 text-sm font-bold text-sky-600 mb-8 hover:text-sky-700 transition-colors bg-sky-50 px-4 py-2 rounded-xl border border-sky-100">
+            <i class="fas fa-chevron-left text-xs"></i> Wróć do filtrowania ofert
+        </button>
+
+        <div class="grid lg:grid-cols-12 gap-10">
+            <div class="lg:col-span-8">
+                <div class="relative mb-6 rounded-3xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100">
+                    <img id="main-image" class="w-full h-[520px] object-cover" alt="Property Visual View">
+                    <div class="absolute bottom-6 left-6 flex gap-3">
+                        <button onclick="prevSlide()" class="w-12 h-12 bg-white/90 hover:bg-white text-slate-900 rounded-2xl flex items-center justify-center font-bold text-xl shadow-md transition-transform active:scale-90">‹</button>
+                        <button onclick="nextSlide()" class="w-12 h-12 bg-white/90 hover:bg-white text-slate-900 rounded-2xl flex items-center justify-center font-bold text-xl shadow-md transition-transform active:scale-90">›</button>
                     </div>
                 </div>
-                
-                <div class="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-between h-full">
-                    <div>
-                        <h1 id="detail-title" class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2"></h1>
-                        <p id="detail-loc" class="text-slate-400 text-sm flex items-center gap-2 mb-6"><i class="fa-solid fa-location-dot text-sky-500"></i> </p>
-                        
-                        <div class="border-y border-slate-100 py-4 mb-6 flex justify-between items-center">
-                            <span class="text-slate-400 text-sm font-medium">Cena ofertowa</span>
-                            <span id="detail-price" class="text-2xl font-black text-sky-600 tracking-tight"></span>
-                        </div>
-                        
-                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Charakterystyka obiektu</h3>
-                        <div id="detail-specs" class="grid grid-cols-3 gap-4 mb-8"></div>
-                        
-                        <p id="detail-desc" class="text-slate-500 text-sm leading-relaxed mb-8"></p>
-                    </div>
+                <div class="grid grid-cols-4 gap-4 mb-10" id="thumbnails"></div>
 
-                    <div class="bg-amber-50/60 border border-amber-200/60 rounded-2xl p-4 mb-6">
-                        <h4 class="text-xs font-bold text-amber-800 flex items-center gap-2 mb-1">
-                            <i class="fa-solid fa-triangle-exclamation"></i> Tarcza Ochronna Inwestora
-                        </h4>
-                        <p class="text-[11px] text-amber-700/90 leading-normal">
-                            W trosce o pełne bezpieczeństwo transakcyjne, ta nieruchomość kwalifikuje się do niezależnego audytu architektoniczno-katastralnego przed podpisaniem umowy przedwstępnej (compromesso).
-                        </p>
+                <div class="bg-white p-8 rounded-3xl border border-sky-100/50 shadow-sm space-y-6">
+                    <div>
+                        <span id="property-location-tag" class="text-xs font-bold uppercase tracking-widest text-sky-600 bg-sky-50 px-3 py-1 rounded-full border border-sky-100"></span>
+                        <h2 id="property-title" class="text-3xl font-black text-slate-900 tracking-tight mt-3 mb-2"></h2>
+                        <div class="text-3xl font-black text-sky-600" id="property-price"></div>
                     </div>
+                    <div class="grid grid-cols-4 gap-4 py-4 border-t border-b border-slate-100 text-center">
+                        <div class="p-2 bg-slate-50 rounded-xl"><i class="fas fa-bed text-sky-600 mb-1"></i><p class="text-xs font-bold text-slate-700">3 Pokoje</p></div>
+                        <div class="p-2 bg-slate-50 rounded-xl"><i class="fas fa-shower text-sky-600 mb-1"></i><p class="text-xs font-bold text-slate-700">2 Łazienki</p></div>
+                        <div class="p-2 bg-slate-50 rounded-xl"><i class="fas fa-swimming-pool text-sky-600 mb-1"></i><p class="text-xs font-bold text-slate-700">Infinity Pool</p></div>
+                        <div class="p-2 bg-slate-50 rounded-xl"><i class="fas fa-water text-sky-600 mb-1"></i><p class="text-xs font-bold text-slate-700">&lt; 100m Sea</p></div>
+                    </div>
+                    <div id="property-description" class="prose text-slate-600 leading-relaxed text-sm"></div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4">
+                <div class="sticky-form bg-slate-900 rounded-3xl shadow-xl p-8 text-white border border-slate-800">
+                    <h3 class="text-xl font-bold tracking-tight text-center mb-1">Zabezpiecz Portfel Inwestycyjny</h3>
+                    <p class="text-center text-xs text-sky-300 font-medium mb-8">Zarezerwuj termin poufnej konsultacji</p>
                     
-                    <form onsubmit="submitForm(event)" class="space-y-3">
-                        <h3 class="text-sm font-bold text-slate-800">Zapytaj o audyt i prezentację</h3>
-                        <input type="text" placeholder="Imię i nazwisko" required class="w-full bg-slate-50 border border-slate-200 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-sky-500 transition-colors">
-                        <input type="email" placeholder="Adres e-mail" required class="w-full bg-slate-50 border border-slate-200 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-sky-500 transition-colors">
-                        <input type="tel" placeholder="Numer telefonu" required class="w-full bg-slate-50 border border-slate-200 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-sky-500 transition-colors">
-                        <button type="submit" class="w-full bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs tracking-wider uppercase py-4 rounded-xl transition-all shadow-md shadow-sky-100">
-                            Wyślij zgłoszenie
-                        </button>
+                    <form onsubmit="submitForm(event)" class="space-y-4 text-xs font-semibold text-slate-300">
+                        <div>
+                            <label class="block mb-2 text-slate-400">Imię i Nazwisko *</label>
+                            <input type="text" required class="w-full px-4 py-3.5 bg-slate-800 border border-slate-700 rounded-xl focus:outline-none focus:border-sky-500 text-white">
+                        </div>
+                        <div>
+                            <label class="block mb-2 text-slate-400">Adres E-mail *</label>
+                            <input type="email" required class="w-full px-4 py-3.5 bg-slate-800 border border-slate-700 rounded-xl focus:outline-none focus:border-sky-500 text-white">
+                        </div>
+                        <div>
+                            <label class="block mb-2 text-slate-400">Numer Telefonu *</label>
+                            <input type="tel" required class="w-full px-4 py-3.5 bg-slate-800 border border-slate-700 rounded-xl focus:outline-none focus:border-sky-500 text-white" placeholder="+48 ...">
+                        </div>
+                        <div class="pt-4">
+                            <button type="submit" class="w-full bg-sky-600 hover:bg-sky-500 text-white py-4 rounded-xl font-bold text-sm tracking-wider uppercase transition-all shadow-md">
+                                Wyślij zapytanie ofertowe
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="about-page" class="hidden bg-slate-50/30 py-16 animate-fadeIn">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div id="about-page" class="hidden max-w-4xl mx-auto px-6 py-16 animate-fadeIn">
+        <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-8 sm:p-12 mb-12">
+            <span class="text-sky-600 font-bold text-xs uppercase tracking-widest block mb-2">Misja i transparentność</span>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-6">Doskonałość i przejrzystość w inwestycjach nieruchomościowych we Włoszech</h1>
             
-            <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-8 sm:p-12 mb-12">
-                <span class="text-sky-600 font-bold text-xs uppercase tracking-widest block mb-2">Misja i transparentność</span>
-                <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-6">Doskonałość i przejrzystość w inwestycjach nieruchomościowych we Włoszech</h1>
+            <div class="prose prose-slate max-w-none text-slate-600 text-sm sm:text-base space-y-6 leading-relaxed">
+                <p>Nasz projekt narodził się z krytycznej obserwacji włoskiego rynku nieruchomości, który często charakteryzuje się nadmierną fragmentacją oraz ofertą dla klientów międzynarodowych pozbawioną odpowiednich gwarancji prawnych i technicznych. Zrozumieliśmy, że dla inwestora zafascynowanego Włochami, który nie posiada szczegółowej wiedzy o lokalnych realiach, samo „pośrednictwo” to zdecydowanie za mało.</p>
+                <p>Naszą misją jest oferowanie wsparcia wielodyscyplinarnej grupy ekspertów (<strong>Task Force</strong>), gwarantującej stuprocentowe bezpieczeństwo procesu akwizycji, dostępnej na każde żądanie klienta. Klient pozostaje w pełni autonomiczny – ma swobodę korzystania z naszego wsparcia, przy zachowaniu pełnego dostępu do portalu i współpracujących z nami agencji.</p>
                 
-                <div class="prose prose-slate max-w-none text-slate-600 text-sm sm:text-base space-y-6 leading-relaxed">
-                    <p>
-                        Nasz projekt narodził się z krytycznej obserwacji włoskiego rynku nieruchomości, który często charakteryzuje się nadmierną fragmentacją oraz ofertą dla klientów międzynarodowych pozbawioną odpowiednich gwarancji prawnych i technicznych. Zrozumieliśmy, że dla inwestora zafascynowanego Włochami, który nie posiada szczegółowej wiedzy o lokalnych realiach, samo „pośrednictwo” to zdecydowanie za mało.
-                    </p>
-                    <p>
-                        Naszą misją jest oferowanie wsparcia wielodyscyplinarnej grupy ekspertów (<strong>Task Force</strong>), gwarantującej stuprocentowe bezpieczeństwo procesu akwizycji, dostępnej na każde żądanie klienta. Klient pozostaje w pełni autonomiczny – ma swobodę korzystania z naszego wsparcia, przy zachowaniu pełnego dostępu do portalu i współpracujących z nami agencji.
-                    </p>
-                    
-                    <h2 class="text-xl font-bold text-slate-900 pt-4">Nasze podejście: Swoboda wyboru i najwyższe standardy</h2>
-                    <p>
-                        Zrewolucjonizowaliśmy tradycyjny model doradztwa, całkowicie odrzucając sztywne, narzucone z góry ograniczenia. Wierzymy, że jakość świadczonych usług powinna być jedyną podstawą współpracy.
-                    </p>
-                    
-                    <ul class="space-y-3 list-none pl-0">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-check text-emerald-500 mt-1"></i>
-                            <span><strong>Brak zbędnych powiązań i pełna transparentność:</strong> Nasza struktura usługowa nie stanowi etapu obowiązkowego. Klient ma pełną swobodę w bezpośrednim kontaktowaniu się z agencjami nieruchomości lub lokalnymi specjalistami.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-check text-emerald-500 mt-1"></i>
-                            <span><strong>Państwa zaufany partner, gdy jest potrzebny:</strong> Nasza rola polega na oferowaniu kwalifikowanego i bezstronnego wsparcia w sytuacjach, w których uznają Państwo za konieczne skorzystanie z niezależnego audytu prawnego lub budowlanego.</span>
-                        </li>
-                    </ul>
-
-                    <h2 class="text-xl font-bold text-slate-900 pt-4">Kluczowe filary bezpieczeństwa kapitału</h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                            <h4 class="font-bold text-slate-800 text-sm mb-1">Pełna transparentność finansowa</h4>
-                            <p class="text-xs text-slate-500">Każda płatność musi być udokumentowana oficjalnym przelewem i fakturą, co eliminuje szarą strefę i niejasne prowizje.</p>
-                        </div>
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                            <h4 class="font-bold text-slate-800 text-sm mb-1">Rygorystyczne weryfikacje katastralne</h4>
-                            <p class="text-xs text-slate-500">Upewniamy się, że stan katastralny (księgi wieczyste) w pełni odpowiada faktycznemu i legalnemu stanowi technicznemu obiektu.</p>
-                        </div>
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                            <h4 class="font-bold text-slate-800 text-sm mb-1">Bezpośrednie śledzenie strumieni</h4>
-                            <p class="text-xs text-slate-500">Negocjacje zapewniają pełną śledzalność środków bezpośrednio do podmiotu uprawnionego, wykluczając nieformalnych pośredników.</p>
-                        </div>
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                            <h4 class="font-bold text-slate-800 text-sm mb-1">Niezależne Due Diligence</h4>
-                            <p class="text-xs text-slate-500">Przed podpisaniem jakiejkolwiek umowy, powierzamy audyt niezależnym doradcom zewnętrznym, niepowiązanym finansowo z agencją sprzedającą.</p>
-                        </div>
-                    </div>
-
-                    <h2 class="text-xl font-bold text-slate-900 pt-4">Dlaczego niezależne doradztwo to najlepsza obrona?</h2>
-                    <p>
-                        Doświadczenia inwestorów pokazują, że entuzjazm nigdy nie powinien zastępować ostrożności. Zakup nieruchomości za granicą wymaga kompetencji prawnych i technicznych znacznie wykraczających poza standardowe usługi tradycyjnej agencji sprzedaży. 
-                    </p>
-                    <p>
-                        Jako profesjonaliści towarzyszymy klientowi w każdej fazie procesu: od weryfikacji katastralnej i urbanistycznej, po zarządzanie transparentnością kontraktów i koordynację prac technicznych zgodnie z prawem. Spokój inwestycji zaczyna się od profesjonalnej i całkowicie bezstronnej weryfikacji.
-                    </p>
-                </div>
+                <h2 class="text-xl font-bold text-slate-900 pt-4">Nasze podejście: Swoboda wyboru i najwyższe standardy</h2>
+                <ul class="space-y-3 list-none pl-0">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-emerald-500 mt-1"></i>
+                        <span><strong>Brak zbędnych powiązań i pełna transparentność:</strong> Nasza struktura usługowa nie stanowi etapu obowiązkowego. Klient ma pełną swobodę w bezpośrednim kontaktowaniu się z agencjami nieruchomości lub lokalnymi specjalistami.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-emerald-500 mt-1"></i>
+                        <span><strong>Państwa zaufany partner, gdy jest potrzebny:</strong> Nasza rola polega na oferowaniu kwalifikowanego i bezstronnego wsparcia w sytuacjach, w których uznają Państwo za konieczne skorzystanie z niezależnego audytu prawnego lub budowlanego.</span>
+                    </li>
+                </ul>
             </div>
+        </div>
 
-            <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-8 sm:p-12">
-                <div class="flex items-center gap-3 mb-4">
-                    <span class="w-3 h-3 rounded-full bg-red-500 animate-pulse"></span>
-                    <span class="text-xs font-bold text-red-600 tracking-wider uppercase">Świadomość Ryzyka rynkowego</span>
-                </div>
-                <h2 class="text-2xl font-black text-slate-900 tracking-tight mb-2">Instrukcja Bezpieczeństwa Transakcyjnego</h2>
-                <p class="text-slate-500 text-sm mb-8">
-                    Rynek zagraniczny niesie za sobą wyzwania prawne. Na podstawie głośnych analiz przypadków nadużyć we Włoszech, w tym szeroko opisanego reportażu śledczego <strong>Gazety Wyborczej („Polka na Sycylii”)</strong>, przygotowaliśmy kompendium pytań i odpowiedzi, które uchronią Twój kapitał przed oszustwami.
-                </p>
+        <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-8 sm:p-12">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-3 h-3 rounded-full bg-red-500 animate-pulse"></span>
+                <span class="text-xs font-bold text-red-600 tracking-wider uppercase">Świadomość Ryzyka rynkowego</span>
+            </div>
+            <h2 class="text-2xl font-black text-slate-900 tracking-tight mb-2">Instrukcja Bezpieczeństwa Transakcyjnego</h2>
+            <p class="text-slate-500 text-sm mb-8">Rynek zagraniczny niesie za sobą wyzwania prawne. Na podstawie głośnych analiz przypadków nadużyć we Włoszech, w tym szeroko opisanego reportażu śledczego <strong>Gazety Wyborczej („Polka na Sycylii”)</strong>, przygotowaliśmy kompendium pytań i odpowiedzi, które uchronią Twój kapitał przed oszustwami.</p>
 
-                <div class="space-y-4">
-                    <div class="faq-item border border-slate-100 rounded-2xl overflow-hidden transition-all">
-                        <button onclick="toggleFaq(this)" class="w-full bg-slate-50/60 hover:bg-slate-50 px-6 py-5 flex justify-between items-center text-left transition-colors">
-                            <span class="font-bold text-sm text-slate-800">Jakie główne zagrożenia na włoskim rynku ujawnił reportaż śledczy Gazety Wyborczej?</span>
-                            <i class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-body hidden bg-white px-6 py-5 border-t border-slate-50 text-xs sm:text-sm text-slate-600 space-y-2">
-                            <p>Reportaż opisuje drastyczne przypadki polskich inwestorów, którzy zaufali nieformalnym, popularnym w mediach społecznościowych pośrednikom (tzw. "naszym ludziom na miejscu") zamiast niezależnym kancelariom prawnym. Główne oszustwa obejmowały:</p>
-                            <ul class="list-disc pl-5 space-y-1 text-slate-500">
-                                <li><strong>Drastyczne zawyżanie cen</strong> rynkowych nieruchomości przez zmowę pośredników z lokalnymi strukturami.</li>
-                                <li><strong>Sprzedaż budynków z nielegalnie dobudowanymi piętrami</strong> bez pozwoleń (samowola budowlana skutkująca ogromnymi kosztami naprawczymi rzędu 100 tys. euro).</li>
-                                <li><strong>Przywłaszczanie zaliczek gotówkowych</strong> (np. 15 000 € przekazywane "do ręki" na rzekome meble lub rezerwacje) bez śladu faktur i dokumentacji bankowej.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="faq-item border border-slate-100 rounded-2xl overflow-hidden transition-all">
-                        <button onclick="toggleFaq(this)" class="w-full bg-slate-50/60 hover:bg-slate-50 px-6 py-5 flex justify-between items-center text-left transition-colors">
-                            <span class="font-bold text-sm text-slate-800">Czym grozi zakup nieruchomości z nielegalną dobudową lub niezgodnością katastralną?</span>
-                            <i class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-body hidden bg-white px-6 py-5 border-t border-slate-50 text-xs sm:text-sm text-slate-600 space-y-2">
-                            <p>We Włoszech odpowiedzialność za wady prawne i urbanistyczne przechodzi na nowego właściciela. Przypadek opisany w San Mauro Castelverde pokazał, że nielegalnie dobudowane trzecie piętro kamienicy groziło katastrofą budowlaną, a koszt wzmocnienia konstrukcji wyceniono na 100 000 €. Kupujący zamiast zysków mierzy się z prokuraturą i wieloletnimi procesami sądowymi.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item border border-slate-100 rounded-2xl overflow-hidden transition-all">
-                        <button onclick="toggleFaq(this)" class="w-full bg-slate-50/60 hover:bg-slate-50 px-6 py-5 flex justify-between items-center text-left transition-colors">
-                            <span class="font-bold text-sm text-slate-800">Jak uchronić się przed utratą gotówki przy transakcjach na Sycylii lub we Włoszech?</span>
-                            <i class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-body hidden bg-white px-6 py-5 border-t border-slate-50 text-xs sm:text-sm text-slate-600 space-y-2">
-                            <p>Podstawową zasadą jest <strong>bezwzględny zakaz przekazywania gotówki pośrednikom do ręki</strong>. Wszystkie płatności – w tym kaucja (caparra) oraz wynagrodzenie agencji – muszą być realizowane transparentnymi przelewami bankowymi na oficjalne konta powiernicze (np. depozyt u notariusza) i poparte fakturami VAT (fattura).</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item border border-slate-100 rounded-2xl overflow-hidden transition-all">
-                        <button onclick="toggleFaq(this)" class="w-full bg-slate-50/60 hover:bg-slate-50 px-6 py-5 flex justify-between items-center text-left transition-colors">
-                            <span class="font-bold text-sm text-slate-800">Dlaczego nie należy polegać wyłącznie na agencji nieruchomości reprezentującej sprzedającego?</span>
-                            <i class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-body hidden bg-white px-6 py-5 border-t border-slate-50 text-xs sm:text-sm text-slate-600 space-y-2">
-                            <p>Lokalna agencja nieruchomości zarabia na prowizji od doprowadzenia do sprzedaży, przez co jej celem jest sfinalizowanie transakcji, a nie szukanie problemów konstrukcyjnych czy prawnych. Bezpieczny zakup wymaga zatrudnienia niezależnego inżyniera budowlanego (geometra) oraz prawnika (avvocato), którzy działają wyłącznie na Twoje zlecenie i zweryfikują stan faktyczny nieruchomości.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-gradient-to-r from-sky-900 to-slate-900 rounded-2xl p-6 sm:p-8 mt-10 text-white flex flex-col sm:flex-row items-center justify-between gap-6">
-                    <div>
-                        <h4 class="font-bold text-base mb-1">Chcesz sprawdzić wybraną ofertę pod kątem ryzyka?</h4>
-                        <p class="text-slate-300 text-xs max-w-xl">Zleć audyt transakcyjny lub wstępne badanie dokumentów katastralnych i śpij spokojnie.</p>
-                    </div>
-                    <button onclick="showPage('properties')" class="w-full sm:w-auto bg-white text-sky-700 hover:bg-sky-50 px-6 py-3 rounded-xl font-bold text-xs tracking-wider uppercase transition-all shadow-lg whitespace-nowrap">
-                        Przeglądaj oferty bezpiecznie
+            <div class="space-y-4">
+                <div class="border border-slate-100 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full bg-slate-50/60 hover:bg-slate-50 px-6 py-5 flex justify-between items-center text-left transition-colors">
+                        <span class="font-bold text-sm text-slate-800">Jakie główne zagrożenia na włoskim rynku ujawnił reportaż śledczy Gazety Wyborczej?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
                     </button>
+                    <div class="faq-body hidden bg-white px-6 py-5 border-t border-slate-50 text-xs sm:text-sm text-slate-600 space-y-2">
+                        <p>Reportaż opisuje drastyczne przypadki polskich inwestorów, którzy zaufali nieformalnym pośrednikom z mediów społecznościowych zamiast niezależnym kancelariom prawnym. Główne oszustwa obejmowały drastyczne zawyżanie cen, sprzedaż obiektów z nielegalnymi dobudowami (samowola budowlana) oraz przywłaszczanie zaliczek gotówkowych.</p>
+                    </div>
                 </div>
 
+                <div class="border border-slate-100 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full bg-slate-50/60 hover:bg-slate-50 px-6 py-5 flex justify-between items-center text-left transition-colors">
+                        <span class="font-bold text-sm text-slate-800">Czym grozi zakup nieruchomości z nielegalną dobudową lub niezgodnością katastralną?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 text-xs transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-body hidden bg-white px-6 py-5 border-t border-slate-50 text-xs sm:text-sm text-slate-600">
+                        <p>We Włoszech odpowiedzialność za wady prawne i urbanistyczne przechodzi na nowego właściciela. Przypadek opisany w San Mauro Castelverde pokazał, że nielegalnie dobudowane trzecie piętro kamienicy groziło katastrofą budowlaną, a koszt wzmocnienia konstrukcji wyceniono na 100 000 €. Kupujący zamiast zysków mierzy się z prokuraturą.</p>
+                    </div>
+                </div>
             </div>
-
         </div>
     </div>
 
-    <footer class="bg-slate-900 text-slate-400 text-xs border-t border-slate-800 py-12 mt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2">
-                <div class="w-6 h-6 bg-sky-600 rounded-md flex items-center justify-center text-white font-bold text-xs">A</div>
-                <span class="text-sm font-bold text-white tracking-tight">Adriatica Homes</span>
+    <footer class="bg-slate-950 text-slate-400 text-xs py-12 border-t border-slate-900 mt-24">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p>&copy; 2026 Adriatica Homes Real Estate. Wszystkie prawa zastrzeżone.</p>
+            <div class="flex gap-6 font-semibold">
+                <a href="#" onclick="showPage('about')" class="hover:text-white">Polityka prywatności</a>
+                <a href="#" class="hover:text-white">Regulamin serwisu</a>
             </div>
-            <p>© 2026 Adriatica Homes Premium Auditing Engine. Wszelkie prawa zastrzeżone.</p>
         </div>
     </footer>
 
     <script>
-        // Core Static Data Collection Array Object Engine
-        const dataStore = [
+        const properties = [
             {
                 id: 1,
-                title: "Villa Positano Aurum",
-                price: "2 450 000 €",
-                location: "Amalfi Coast, Włochy",
-                badge: "Top Premium",
-                desc: "Zjawiskowa willa z panoramicznym widokiem na zatokę Amalfi. Prywatny basen kaskadowy, luksusowe wykończenie wnętrz z marmuru karraryjskiego. Obiekt przeszedł pełną weryfikację katastralną i posiada kompletną zgodność urbanistyczną.",
-                specs: { space: "320 m²", beds: "5 Sypialni", baths: "4 Łazienki" },
-                coords: [40.6281, 14.4850],
+                title: "Dwupokojowy apartament z widokiem na morze",
+                location: "Tortoreto Lido, Włochy",
+                price: "320 000 PLN",
+                coords: [42.802, 13.929],
                 images: [
-                    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
-                ]
+                    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+                    "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80"
+                ],
+                description: "<p>Piękny, jasny apartament z dużym tarasem i bezpośrednim widokiem na linię brzegową.</p>"
             },
             {
                 id: 2,
-                title: "Attico Vista Mare Trieste",
-                price: "890 000 €",
-                location: "Triest, Włochy",
-                badge: "Obywatelski Klasyk",
-                desc: "Luksusowy apartament penthouse zlokalizowany w historycznym sercu Triestu z widokiem na Adriatyk. Duży zadaszony taras, inteligentny system zarządzania domem. Brak jakichkolwiek nielegalnych modyfikacji architektonicznych.",
-                specs: { space: "165 m²", beds: "3 Sypialnie", baths: "2 Łazienki" },
-                coords: [45.6495, 13.7768],
+                title: "Trzypokojowe mieszkanie z tarasem przy plaży",
+                location: "Alba Adriatica, Włochy",
+                price: "480 000 PLN",
+                coords: [42.831, 13.924],
                 images: [
-                    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80"
-                ]
+                    "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80"
+                ],
+                description: "<p>Luksusowa posiadłość zaledwie 30 metrów od prywatnego zejścia na plażę.</p>"
             },
             {
                 id: 3,
-                title: "Dimora Storica Otranto",
-                price: "1 200 000 €",
-                location: "Apulia, Salento, Włochy",
-                badge: "Zabytek Premium",
-                desc: "Wyjątkowa, historyczna posiadłość z kamienia z odrestaurowanymi sklepieniami gwiaździstymi w sercu Salento. Bliskość piaszczystych plaż adriatyckich. Audyt due diligence potwierdził brak obciążeń hipotecznych.",
-                specs: { space: "210 m²", beds: "4 Sypialnie", baths: "3 Łazienki" },
-                coords: [40.1462, 18.4904],
+                title: "Apartament premium z widokiem panoramicznym",
+                location: "Pineto, Włochy",
+                price: "395 000 PLN",
+                coords: [42.610, 14.065],
                 images: [
-                    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=800&q=80"
-                ]
+                    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80"
+                ],
+                description: "<p>Kameralna, prestiżowa lokalizacja rezydencyjna w Pineto.</p>"
             }
         ];
 
-        let mapInstance = null;
-        let markersGroup = [];
         let currentProperty = null;
-        let currentImageIndex = 0;
-
-        function initLeafletMap() {
-            if (mapInstance) return;
-            // Initialize geographic engine viewport coordinates focused on Italy area
-            mapInstance = L.map('map-container', { zoomControl: false }).setView([42.5000, 14.0000], 6);
-            L.control.zoom({ position: 'bottomright' }).addTo(mapInstance);
-            
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-                attribution: '&copy; OpenStreetMap &copy; CARTO'
-            }).addTo(mapInstance);
-
-            populateMapMarkers();
-        }
-
-        function populateMapMarkers() {
-            if (!mapInstance) return;
-            markersGroup.forEach(m => mapInstance.removeLayer(m));
-            markersGroup = [];
-
-            dataStore.forEach(p => {
-                const markerIcon = L.divIcon({
-                    className: 'custom-div-icon',
-                    html: `<div class="bg-slate-900 text-white font-black text-[10px] px-2.5 py-1.5 rounded-lg shadow-md border border-white whitespace-nowrap hover:bg-sky-600 transition-colors">${p.price}</div>`,
-                    iconSize: [60, 24],
-                    iconAnchor: [30, 12]
-                });
-
-                const m = L.marker(p.coords, { icon: markerIcon }).addTo(mapInstance);
-                m.on('click', () => { showDetails(p.id); });
-                markersGroup.push(m);
-            });
-        }
+        let currentSlide = 0;
+        let mapInstance = null;
 
         function populateCards() {
-            const grid = document.getElementById('properties-grid');
-            grid.innerHTML = '';
+            const featuredContainer = document.getElementById('featured-properties');
+            const allContainer = document.getElementById('all-properties');
             
-            dataStore.forEach(p => {
-                const card = document.createElement('div');
-                card.className = "bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden hover:shadow-md transition-all cursor-pointer group flex flex-col";
-                card.onclick = () => showDetails(p.id);
-                card.innerHTML = `
-                    <div class="h-48 overflow-hidden relative bg-slate-100">
-                        <img src="${p.images[0]}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md text-white font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-md z-10">${p.badge}</span>
-                    </div>
-                    <div class="p-5 flex-col justify-between flex-1 flex">
-                        <div>
-                            <div class="flex justify-between items-start gap-2 mb-1">
-                                <h3 class="font-bold text-slate-900 group-hover:text-sky-600 transition-colors text-base">${p.title}</h3>
-                                <span class="text-sky-600 font-extrabold text-sm whitespace-nowrap">${p.price}</span>
-                            </div>
-                            <p class="text-slate-400 text-xs flex items-center gap-1 mb-3"><i class="fa-solid fa-location-dot"></i> ${p.location}</p>
-                            <p class="text-slate-500 text-xs line-clamp-2 leading-relaxed mb-4">${p.desc}</p>
+            featuredContainer.innerHTML = '';
+            allContainer.innerHTML = '';
+
+            properties.forEach(prop => {
+                const cardHTML = `
+                    <div class="bg-white rounded-3xl overflow-hidden cursor-pointer shadow-sm border border-sky-100/40 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-md">
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="${prop.images[0]}" class="w-full h-full object-cover">
+                            <div class="absolute top-4 left-4 bg-slate-950/70 backdrop-blur-md text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-lg border border-white/10">Nowość</div>
                         </div>
-                        <div class="flex justify-between items-center text-[11px] font-medium text-slate-400 border-t border-slate-50 pt-3">
-                            <span><i class="fa-solid fa-vector-square text-sky-500"></i> ${p.specs.space}</span>
-                            <span><i class="fa-solid fa-bed text-sky-500"></i> ${p.specs.beds}</span>
-                            <span><i class="fa-solid fa-bath text-sky-500"></i> ${p.specs.baths}</span>
+                        <div class="p-6">
+                            <span class="text-[11px] text-sky-600 font-extrabold uppercase tracking-wider">${prop.location}</span>
+                            <div class="font-bold text-lg text-slate-900 mt-1 mb-2 line-clamp-1">${prop.title}</div>
+                            <div class="text-xl font-black text-slate-900">${prop.price}</div>
                         </div>
                     </div>
                 `;
-                grid.appendChild(card);
+
+                const fCard = document.createElement('div'); fCard.innerHTML = cardHTML; fCard.onclick = () => showDetail(prop);
+                const aCard = document.createElement('div'); aCard.innerHTML = cardHTML; aCard.onclick = () => showDetail(prop);
+                
+                featuredContainer.appendChild(fCard);
+                allContainer.appendChild(aCard);
             });
         }
 
-        function showDetails(id) {
-            currentProperty = dataStore.find(p => p.id === id);
-            currentImageIndex = 0;
-            
-            document.getElementById('detail-title').innerText = currentProperty.title;
-            document.getElementById('detail-price').innerText = currentProperty.price;
-            document.getElementById('detail-loc').innerHTML = `<i class="fa-solid fa-location-dot text-sky-500"></i> ${currentProperty.location}`;
-            document.getElementById('detail-desc').innerText = currentProperty.desc;
-            document.getElementById('detail-badge').innerText = currentProperty.badge;
-            
-            const specsContainer = document.getElementById('detail-specs');
-            specsContainer.innerHTML = `
-                <div class="bg-slate-50 p-2.5 rounded-xl text-center border border-slate-100"><p class="text-[10px] text-slate-400 font-medium">Metraż</p><p class="text-xs font-bold text-slate-800">${currentProperty.specs.space}</p></div>
-                <div class="bg-slate-50 p-2.5 rounded-xl text-center border border-slate-100"><p class="text-[10px] text-slate-400 font-medium">Pokoje</p><p class="text-xs font-bold text-slate-800">${currentProperty.specs.beds}</p></div>
-                <div class="bg-slate-50 p-2.5 rounded-xl text-center border border-slate-100"><p class="text-[10px] text-slate-400 font-medium">Łazienki</p><p class="text-xs font-bold text-slate-800">${currentProperty.specs.baths}</p></div>
-            `;
-            
-            updateCarousel();
+        function initLeafletMap() {
+            if (mapInstance) return;
+
+            // Correct coordinate calibration to center perfectly over the items on the Teramo Coastline
+            mapInstance = L.map('live-map', {
+                center: [42.75, 13.95],
+                zoom: 10,
+                scrollWheelZoom: false
+            });
+
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; OpenStreetMap'
+            }).addTo(mapInstance);
+
+            properties.forEach(prop => {
+                const customIcon = L.divIcon({
+                    className: 'custom-map-badge',
+                    html: `
+                        <div class="bg-sky-600 hover:bg-slate-900 text-white font-black text-[11px] px-2.5 py-1.5 rounded-xl shadow-lg border-2 border-white transition-all transform hover:scale-110 whitespace-nowrap cursor-pointer">
+                            <i class="fas fa-tags text-[9px] mr-1 text-sky-200"></i> ${prop.price.replace(' 000 PLN', 'k')}
+                        </div>
+                    `,
+                    iconSize: [80, 30],
+                    iconAnchor: [40, 15]
+                });
+
+                L.marker(prop.coords, { icon: customIcon })
+                 .addTo(mapInstance)
+                 .on('click', () => { showDetail(prop); });
+            });
+        }
+
+        function showDetail(prop) {
+            currentProperty = prop;
+            currentSlide = 0;
             showPage('detail');
+
+            document.getElementById('property-title').textContent = prop.title;
+            document.getElementById('property-price').textContent = prop.price;
+            document.getElementById('property-location-tag').textContent = prop.location;
+            document.getElementById('property-description').innerHTML = prop.description;
+
+            updateCarousel();
         }
 
         function updateCarousel() {
-            if(currentProperty) {
-                document.getElementById('detail-img').src = currentProperty.images[currentImageIndex];
-            }
+            if (!currentProperty) return;
+            document.getElementById('main-image').src = currentProperty.images[currentSlide];
+
+            const thumbsContainer = document.getElementById('thumbnails');
+            thumbsContainer.innerHTML = '';
+            currentProperty.images.forEach((img, i) => {
+                const thumb = document.createElement('img');
+                thumb.src = img;
+                thumb.className = `h-20 w-full object-cover rounded-xl cursor-pointer border-2 transition-all ${i === currentSlide ? 'border-sky-600 bg-sky-50' : 'border-transparent opacity-60'}`;
+                thumb.onclick = () => { currentSlide = i; updateCarousel(); };
+                thumbsContainer.appendChild(thumb);
+            });
         }
 
-        function nextImage() {
-            if(currentProperty) {
-                currentImageIndex = (currentImageIndex + 1) % currentProperty.images.length;
+        function nextSlide() {
+            if (currentProperty) {
+                currentSlide = (currentSlide + 1) % currentProperty.images.length;
                 updateCarousel();
             }
         }
 
-        function prevImage() {
-            if(currentProperty) {
-                currentImageIndex = (currentImageIndex - 1 + currentProperty.images.length) % currentProperty.images.length;
+        function prevSlide() {
+            if (currentProperty) {
+                currentSlide = (currentSlide - 1 + currentProperty.images.length) % currentProperty.images.length;
                 updateCarousel();
             }
         }
 
         function toggleFaq(btn) {
             const body = btn.nextElementSibling;
-            const icon = btn.querySelector('i.fa-chevron-down');
-            const isOpen = !body.classList.contains('hidden');
-            
-            document.querySelectorAll('.faq-body').forEach(b => b.classList.add('hidden'));
-            document.querySelectorAll('.faq-item button i.fa-chevron-down').forEach(i => i.style.transform = '');
-            
-            if (!isOpen) {
-                body.classList.remove('hidden');
-                icon.style.transform = 'rotate(180deg)';
-            }
+            body.classList.toggle('hidden');
         }
 
         function showPage(page) {
@@ -507,12 +457,7 @@
         }
 
         function backToExplore() { showPage('properties'); }
-
-        function submitForm(e) {
-            e.preventDefault();
-            alert("✅ Zapytanie przesłane pomyślnie. Przydzielony doradca skontaktuje się telefonicznie w ciągu najbliższych 2 godzin.");
-            e.target.reset();
-        }
+        function submitForm(e) { e.preventDefault(); alert("✅ Zapytanie wysłane pomyślnie!"); e.target.reset(); }
 
         window.onload = () => { populateCards(); };
     </script>
